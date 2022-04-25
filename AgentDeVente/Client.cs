@@ -8,6 +8,10 @@ namespace GLMainProject
 {
     public class Client
     {
+        public Client()
+        {
+
+        }
         public int ID { get; set; }
         public string Designation { get; set; }
         public string Adress { get; set; }

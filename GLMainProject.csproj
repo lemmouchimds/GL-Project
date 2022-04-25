@@ -66,6 +66,7 @@
     <Compile Include="AgentDeVente\MettrePrix.Designer.cs">
       <DependentUpon>MettrePrix.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgentDeVente\OperationVente.cs" />
     <Compile Include="AgentDeVente\Produit.cs" />
     <Compile Include="Authentification.cs">
       <SubType>Form</SubType>
