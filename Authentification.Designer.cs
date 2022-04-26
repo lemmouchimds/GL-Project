@@ -39,7 +39,7 @@
             // bnOK
             // 
             this.bnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bnOK.Location = new System.Drawing.Point(416, 119);
+            this.bnOK.Location = new System.Drawing.Point(414, 119);
             this.bnOK.Name = "bnOK";
             this.bnOK.Size = new System.Drawing.Size(92, 34);
             this.bnOK.TabIndex = 0;
@@ -49,14 +49,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 85);
+            this.textBox1.Location = new System.Drawing.Point(98, 74);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(510, 26);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 35);
+            this.textBox2.Location = new System.Drawing.Point(98, 24);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(510, 26);
             this.textBox2.TabIndex = 2;
@@ -64,7 +64,7 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(21, 35);
+            this.lblUser.Location = new System.Drawing.Point(12, 27);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(43, 20);
             this.lblUser.TabIndex = 3;
@@ -73,7 +73,7 @@
             // lblPswrd
             // 
             this.lblPswrd.AutoSize = true;
-            this.lblPswrd.Location = new System.Drawing.Point(21, 88);
+            this.lblPswrd.Location = new System.Drawing.Point(12, 77);
             this.lblPswrd.Name = "lblPswrd";
             this.lblPswrd.Size = new System.Drawing.Size(78, 20);
             this.lblPswrd.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             this.bnCancel.CausesValidation = false;
             this.bnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bnCancel.Location = new System.Drawing.Point(514, 119);
+            this.bnCancel.Location = new System.Drawing.Point(512, 119);
             this.bnCancel.Name = "bnCancel";
             this.bnCancel.Size = new System.Drawing.Size(96, 34);
             this.bnCancel.TabIndex = 5;

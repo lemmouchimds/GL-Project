@@ -17,13 +17,6 @@ namespace GLMainProject
             InitializeComponent();
         }
 
-        private void nbPrix_Click(object sender, EventArgs e)
-        {
-            var m = new AgentDeVente.MettrePrix();
-            m.ShowDialog();
-            m.Close();
-        }
-
         private void Main_Shown(object sender, EventArgs e)
         {
             Form authentification = new Authentification();

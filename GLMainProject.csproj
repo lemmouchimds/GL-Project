@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgentDeVente\AddToCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +69,11 @@
       <DependentUpon>AddToCatalogue.cs</DependentUpon>
     </Compile>
     <Compile Include="AgentDeVente\Client.cs" />
+    <Compile Include="AgentDeVente\DetailFacture.cs" />
+    <Compile Include="AgentDeVente\Facture.cs" />
     <Compile Include="AgentDeVente\OperationVente.cs" />
     <Compile Include="AgentDeVente\Produit.cs" />
+    <Compile Include="AgentDeVente\Stock.cs" />
     <Compile Include="Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +100,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgentDeVente\AddToCatalogue.resx">
       <DependentUpon>AddToCatalogue.cs</DependentUpon>
     </EmbeddedResource>

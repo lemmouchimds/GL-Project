@@ -28,7 +28,12 @@ namespace GLMainProject.AgentDeVente
                 tbGainSouaite.Text == string.Empty
                 )
             {
-                var result = MessageBox.Show("Are you sure about that ?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                var result = MessageBox.Show("You have an empty field, are you sure you want to close it ?", 
+                    Application.ProductName, 
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Warning, 
+                    MessageBoxDefaultButton.Button2);
+
                 if (result == DialogResult.No)
                     e.Cancel = true;
             }
