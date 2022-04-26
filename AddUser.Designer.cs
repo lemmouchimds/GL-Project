@@ -53,7 +53,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(12, 65);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(117, 30);
+            this.lblPassword.Size = new System.Drawing.Size(78, 20);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
@@ -127,7 +127,8 @@
             this.MinimumSize = new System.Drawing.Size(490, 312);
             this.Name = "AddUser";
             this.ShowIcon = false;
-            this.Text = "AddUser";
+            this.Text = "Ajouter un Utilisateur";
+            this.Load += new System.EventHandler(this.AddUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

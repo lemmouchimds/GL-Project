@@ -16,5 +16,19 @@ namespace GLMainProject
         {
             InitializeComponent();
         }
+
+        private void AddUser_Load(object sender, EventArgs e)
+        {
+            GetUsersType();
+        }
+
+        private void GetUsersType()
+        {
+            var names = Enum.GetNames(typeof(UserType));
+            foreach (var name in names)
+            {
+                cbUserType.Items.Add(name);
+            }
+        }
     }
 }

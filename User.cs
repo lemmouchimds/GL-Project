@@ -1,4 +1,6 @@
-﻿namespace GLMainProject
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GLMainProject
 {
     public class User
     {
@@ -6,14 +8,10 @@
         {
 
         }
-
+        [Key]
+        public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public enum UserType
-        {
-            AgentVente,
-            AgentCommercial,
-            Directeur
-        }
+        public UserType UserType { get; set; }
     }
 }

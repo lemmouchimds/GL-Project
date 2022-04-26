@@ -1,6 +1,6 @@
-﻿namespace GLMainProject
+﻿namespace GLMainProject.AgentDeVente
 {
-    partial class Catalogue
+    partial class StockUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewCatalogue = new System.Windows.Forms.DataGridView();
             this.bnEdit = new System.Windows.Forms.Button();
             this.bnDelete = new System.Windows.Forms.Button();
             this.bnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalogue)).BeginInit();
+            this.dataGridViewStock = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewCatalogue
-            // 
-            this.dataGridViewCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewCatalogue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCatalogue.Location = new System.Drawing.Point(12, 74);
-            this.dataGridViewCatalogue.Name = "dataGridViewCatalogue";
-            this.dataGridViewCatalogue.RowHeadersWidth = 62;
-            this.dataGridViewCatalogue.RowTemplate.Height = 28;
-            this.dataGridViewCatalogue.Size = new System.Drawing.Size(872, 425);
-            this.dataGridViewCatalogue.TabIndex = 1;
             // 
             // bnEdit
             // 
@@ -54,7 +41,7 @@
             this.bnEdit.Location = new System.Drawing.Point(85, 12);
             this.bnEdit.Name = "bnEdit";
             this.bnEdit.Size = new System.Drawing.Size(67, 56);
-            this.bnEdit.TabIndex = 8;
+            this.bnEdit.TabIndex = 5;
             this.bnEdit.Text = "!";
             this.bnEdit.UseVisualStyleBackColor = true;
             // 
@@ -64,7 +51,7 @@
             this.bnDelete.Location = new System.Drawing.Point(158, 12);
             this.bnDelete.Name = "bnDelete";
             this.bnDelete.Size = new System.Drawing.Size(67, 56);
-            this.bnDelete.TabIndex = 7;
+            this.bnDelete.TabIndex = 4;
             this.bnDelete.Text = "Ö";
             this.bnDelete.UseVisualStyleBackColor = true;
             // 
@@ -74,35 +61,45 @@
             this.bnAdd.Location = new System.Drawing.Point(12, 12);
             this.bnAdd.Name = "bnAdd";
             this.bnAdd.Size = new System.Drawing.Size(67, 56);
-            this.bnAdd.TabIndex = 6;
+            this.bnAdd.TabIndex = 3;
             this.bnAdd.Text = "+";
             this.bnAdd.UseVisualStyleBackColor = true;
-            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
-            // Catalogue
+            // dataGridViewStock
+            // 
+            this.dataGridViewStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStock.Location = new System.Drawing.Point(12, 75);
+            this.dataGridViewStock.Name = "dataGridViewStock";
+            this.dataGridViewStock.RowHeadersWidth = 62;
+            this.dataGridViewStock.RowTemplate.Height = 28;
+            this.dataGridViewStock.Size = new System.Drawing.Size(769, 359);
+            this.dataGridViewStock.TabIndex = 6;
+            // 
+            // StockUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(896, 511);
+            this.ClientSize = new System.Drawing.Size(793, 446);
+            this.Controls.Add(this.dataGridViewStock);
             this.Controls.Add(this.bnEdit);
             this.Controls.Add(this.bnDelete);
             this.Controls.Add(this.bnAdd);
-            this.Controls.Add(this.dataGridViewCatalogue);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(670, 459);
-            this.Name = "Catalogue";
-            this.Text = "Catalogue";
-            this.Load += new System.EventHandler(this.Catalogue_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalogue)).EndInit();
+            this.MinimumSize = new System.Drawing.Size(815, 502);
+            this.Name = "StockUI";
+            this.Text = "Stock";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridViewCatalogue;
+
         private System.Windows.Forms.Button bnEdit;
         private System.Windows.Forms.Button bnDelete;
         private System.Windows.Forms.Button bnAdd;
+        private System.Windows.Forms.DataGridView dataGridViewStock;
     }
 }

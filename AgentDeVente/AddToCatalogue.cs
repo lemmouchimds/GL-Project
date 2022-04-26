@@ -38,5 +38,25 @@ namespace GLMainProject.AgentDeVente
                     e.Cancel = true;
             }
         }
+
+        private void bnAdd_Click(object sender, EventArgs e)
+        {
+
+            using(var bd = new GLprojectDBcontext())
+            {
+                var result = new Produit
+                {
+                    Referance = tbRef.Text,
+                    Designation = tbDes.Text,
+                    ValNutritionnelle = double.Parse(tbValNut.Text),
+                    PoidsNet = double.Parse(tbPoids.Text),
+                    CoutRevient = decimal.Parse(tbCoutRevient.Text),
+                    GainSouaite = decimal.Parse(tbGainSouaite.Text)
+                };
+
+                bd.Produit.Add(result);
+                bd.SaveChanges();
+            }
+        }
     }
 }

@@ -28,5 +28,11 @@ namespace GLMainProject
             var cata = new Catalogue();
             cata.Show();
         }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var newUser = new AddUser();
+            newUser.ShowDialog();
+        }
     }
 }
