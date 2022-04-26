@@ -20,7 +20,7 @@ namespace GLMainProject
         private void button1_Click(object sender, EventArgs e)
         {
             var add = new AgentDeVente.AddToCatalogue();
-            add.Show();
+            add.ShowDialog();
         }
     }
 }

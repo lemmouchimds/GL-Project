@@ -16,5 +16,22 @@ namespace GLMainProject.AgentDeVente
         {
             InitializeComponent();
         }
+
+        private void AddToCatalogue_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(
+                tbRef.Text == string.Empty ||
+                tbDes.Text == string.Empty ||
+                tbValNut.Text == string.Empty ||
+                tbPoids.Text == string.Empty ||
+                tbCoutRevient.Text == string.Empty ||
+                tbGainSouaite.Text == string.Empty
+                )
+            {
+                var result = MessageBox.Show("Are you sure about that ?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (result == DialogResult.No)
+                    e.Cancel = true;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,23 +14,25 @@ namespace GLMainProject
 
         }
 
+        [Key]
         public int ID { get; set; } 
+        public string Referance { get; set; }
         public string Designation { get; set; }
-        public float ValNutritionnelle { get; set; }
-        public float PoidsNet { get; set; }
-        public decimal CoutRevuent { get; set; }
+        public double ValNutritionnelle { get; set; }
+        public double PoidsNet { get; set; }
+        public decimal CoutRevient { get; set; }
         public decimal GainSouaite { get; set; }
         public decimal PrixFinal
         {
-            get { return CoutRevuent + GainSouaite; }
-            set { PrixFinal = value; }
+            get { return CoutRevient + GainSouaite; }
+//            set { PrixFinal = value; }
         }
 
     }
 
-    public class ProduitDeriver : Produit
+    public class ProduitDerivee : Produit
     {
-        public ProduitDeriver()
+        public ProduitDerivee()
         {
 
         }

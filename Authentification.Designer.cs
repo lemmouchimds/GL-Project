@@ -33,14 +33,15 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPswrd = new System.Windows.Forms.Label();
+            this.bnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bnOK
             // 
-            this.bnOK.Location = new System.Drawing.Point(347, 91);
-            this.bnOK.Margin = new System.Windows.Forms.Padding(2);
+            this.bnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.bnOK.Location = new System.Drawing.Point(416, 119);
             this.bnOK.Name = "bnOK";
-            this.bnOK.Size = new System.Drawing.Size(61, 22);
+            this.bnOK.Size = new System.Drawing.Size(92, 34);
             this.bnOK.TabIndex = 0;
             this.bnOK.Text = "OK";
             this.bnOK.UseVisualStyleBackColor = true;
@@ -48,57 +49,65 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 55);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(100, 85);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(341, 20);
+            this.textBox1.Size = new System.Drawing.Size(510, 26);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 23);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(100, 35);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(341, 20);
+            this.textBox2.Size = new System.Drawing.Size(510, 26);
             this.textBox2.TabIndex = 2;
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(14, 23);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUser.Location = new System.Drawing.Point(21, 35);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(29, 13);
+            this.lblUser.Size = new System.Drawing.Size(43, 20);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "User";
             // 
             // lblPswrd
             // 
             this.lblPswrd.AutoSize = true;
-            this.lblPswrd.Location = new System.Drawing.Point(14, 57);
-            this.lblPswrd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPswrd.Location = new System.Drawing.Point(21, 88);
             this.lblPswrd.Name = "lblPswrd";
-            this.lblPswrd.Size = new System.Drawing.Size(53, 13);
+            this.lblPswrd.Size = new System.Drawing.Size(78, 20);
             this.lblPswrd.TabIndex = 4;
             this.lblPswrd.Text = "Password";
             this.lblPswrd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // bnCancel
+            // 
+            this.bnCancel.CausesValidation = false;
+            this.bnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bnCancel.Location = new System.Drawing.Point(514, 119);
+            this.bnCancel.Name = "bnCancel";
+            this.bnCancel.Size = new System.Drawing.Size(96, 34);
+            this.bnCancel.TabIndex = 5;
+            this.bnCancel.Text = "Annuler";
+            this.bnCancel.UseVisualStyleBackColor = true;
+            // 
             // Authentification
             // 
             this.AcceptButton = this.bnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 124);
+            this.CancelButton = this.bnCancel;
+            this.ClientSize = new System.Drawing.Size(620, 165);
             this.ControlBox = false;
+            this.Controls.Add(this.bnCancel);
             this.Controls.Add(this.lblPswrd);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.bnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(435, 163);
-            this.MinimumSize = new System.Drawing.Size(435, 163);
+            this.MaximumSize = new System.Drawing.Size(642, 221);
+            this.MinimumSize = new System.Drawing.Size(642, 221);
             this.Name = "Authentification";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -115,5 +124,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPswrd;
+        private System.Windows.Forms.Button bnCancel;
     }
 }

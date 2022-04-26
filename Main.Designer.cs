@@ -28,26 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nbPrix = new System.Windows.Forms.Button();
             this.bnCatalogue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // nbPrix
-            // 
-            this.nbPrix.Location = new System.Drawing.Point(72, 119);
-            this.nbPrix.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nbPrix.Name = "nbPrix";
-            this.nbPrix.Size = new System.Drawing.Size(234, 68);
-            this.nbPrix.TabIndex = 0;
-            this.nbPrix.Text = "Prix";
-            this.nbPrix.UseVisualStyleBackColor = true;
-            this.nbPrix.Click += new System.EventHandler(this.nbPrix_Click);
-            // 
             // bnCatalogue
             // 
-            this.bnCatalogue.Location = new System.Drawing.Point(343, 119);
+            this.bnCatalogue.Location = new System.Drawing.Point(299, 37);
             this.bnCatalogue.Name = "bnCatalogue";
-            this.bnCatalogue.Size = new System.Drawing.Size(150, 83);
+            this.bnCatalogue.Size = new System.Drawing.Size(201, 125);
             this.bnCatalogue.TabIndex = 1;
             this.bnCatalogue.Text = "Catalogue";
             this.bnCatalogue.UseVisualStyleBackColor = true;
@@ -59,17 +47,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 585);
             this.Controls.Add(this.bnCatalogue);
-            this.Controls.Add(this.nbPrix);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Milk Production Management";
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button nbPrix;
         private System.Windows.Forms.Button bnCatalogue;
     }
 }

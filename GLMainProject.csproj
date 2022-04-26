@@ -7,7 +7,7 @@
     <ProjectGuid>{92212480-7AF7-4E40-8342-F622FFEEBF3E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GLMainProject</RootNamespace>
-    <AssemblyName>GLMainProject</AssemblyName>
+    <AssemblyName>MilkProductionManagement</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>milk-carton.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -60,12 +63,6 @@
       <DependentUpon>AddToCatalogue.cs</DependentUpon>
     </Compile>
     <Compile Include="AgentDeVente\Client.cs" />
-    <Compile Include="AgentDeVente\MettrePrix.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgentDeVente\MettrePrix.Designer.cs">
-      <DependentUpon>MettrePrix.cs</DependentUpon>
-    </Compile>
     <Compile Include="AgentDeVente\OperationVente.cs" />
     <Compile Include="AgentDeVente\Produit.cs" />
     <Compile Include="Authentification.cs">
@@ -99,9 +96,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgentDeVente\Catalogue.resx">
       <DependentUpon>Catalogue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\MettrePrix.resx">
-      <DependentUpon>MettrePrix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
@@ -137,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="milk-carton.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
