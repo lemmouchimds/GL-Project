@@ -1,7 +1,9 @@
-﻿using System.Data.Entity;
+﻿using MySql.Data.EntityFramework;
+using System.Data.Entity;
 
 namespace GLMainProject
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class GLprojectDBcontext : DbContext
     {
         public GLprojectDBcontext()

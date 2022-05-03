@@ -26,6 +26,7 @@ namespace GLMainProject
         private void bnCatalogue_Click(object sender, EventArgs e)
         {
             var cata = new Catalogue();
+            //cata.Parent = this;
             cata.Show();
         }
 
@@ -33,6 +34,13 @@ namespace GLMainProject
         {
             var newUser = new AddUser();
             newUser.ShowDialog();
+        }
+
+        private void bnClient_Click(object sender, EventArgs e)
+        {
+            var client = new AgentDeVente.ClientUI();
+            //client.Parent = this;
+            client.Show();
         }
     }
 }

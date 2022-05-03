@@ -57,6 +57,7 @@
             this.bnClient.TabIndex = 2;
             this.bnClient.Text = "Client";
             this.bnClient.UseVisualStyleBackColor = true;
+            this.bnClient.Click += new System.EventHandler(this.bnClient_Click);
             // 
             // menuStrip1
             // 
@@ -67,7 +68,7 @@
             this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1012, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 36);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,7 +78,7 @@
             this.addToolStripMenuItem,
             this.vueAllToolStripMenuItem});
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 29);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 32);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // addToolStripMenuItem
@@ -112,6 +113,7 @@
             this.Controls.Add(this.bnCatalogue);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Milk Production Management";
