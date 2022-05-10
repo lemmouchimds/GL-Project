@@ -32,6 +32,8 @@
             this.bnEdit = new System.Windows.Forms.Button();
             this.bnDelete = new System.Windows.Forms.Button();
             this.bnAdd = new System.Windows.Forms.Button();
+            this.tbSearsh = new System.Windows.Forms.TextBox();
+            this.bnSearsh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalogue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,12 +81,33 @@
             this.bnAdd.UseVisualStyleBackColor = true;
             this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
+            // tbSearsh
+            // 
+            this.tbSearsh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearsh.Location = new System.Drawing.Point(396, 25);
+            this.tbSearsh.Name = "tbSearsh";
+            this.tbSearsh.Size = new System.Drawing.Size(428, 26);
+            this.tbSearsh.TabIndex = 17;
+            // 
+            // bnSearsh
+            // 
+            this.bnSearsh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnSearsh.Location = new System.Drawing.Point(830, 12);
+            this.bnSearsh.Name = "bnSearsh";
+            this.bnSearsh.Size = new System.Drawing.Size(54, 56);
+            this.bnSearsh.TabIndex = 18;
+            this.bnSearsh.Text = "🔍";
+            this.bnSearsh.UseVisualStyleBackColor = true;
+            // 
             // Catalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(896, 511);
+            this.Controls.Add(this.bnSearsh);
+            this.Controls.Add(this.tbSearsh);
             this.Controls.Add(this.bnEdit);
             this.Controls.Add(this.bnDelete);
             this.Controls.Add(this.bnAdd);
@@ -96,6 +119,7 @@
             this.Load += new System.EventHandler(this.Catalogue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalogue)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,5 +128,7 @@
         private System.Windows.Forms.Button bnEdit;
         private System.Windows.Forms.Button bnDelete;
         private System.Windows.Forms.Button bnAdd;
+        private System.Windows.Forms.TextBox tbSearsh;
+        private System.Windows.Forms.Button bnSearsh;
     }
 }

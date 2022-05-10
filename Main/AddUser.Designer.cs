@@ -90,8 +90,9 @@
             // 
             // bnCancel
             // 
+            this.bnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bnCancel.Location = new System.Drawing.Point(364, 207);
+            this.bnCancel.Location = new System.Drawing.Point(364, 158);
             this.bnCancel.Name = "bnCancel";
             this.bnCancel.Size = new System.Drawing.Size(92, 37);
             this.bnCancel.TabIndex = 7;
@@ -100,11 +101,12 @@
             // 
             // bnAdd
             // 
-            this.bnAdd.Location = new System.Drawing.Point(266, 207);
+            this.bnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bnAdd.Location = new System.Drawing.Point(266, 158);
             this.bnAdd.Name = "bnAdd";
             this.bnAdd.Size = new System.Drawing.Size(92, 37);
             this.bnAdd.TabIndex = 8;
-            this.bnAdd.Text = "Ajouter";
+            this.bnAdd.Text = "OK";
             this.bnAdd.UseVisualStyleBackColor = true;
             // 
             // AddUser
@@ -113,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bnCancel;
-            this.ClientSize = new System.Drawing.Size(468, 256);
+            this.ClientSize = new System.Drawing.Size(468, 207);
             this.Controls.Add(this.bnAdd);
             this.Controls.Add(this.bnCancel);
             this.Controls.Add(this.cbUserType);
@@ -124,10 +126,11 @@
             this.Controls.Add(this.lblUsername);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(490, 312);
-            this.MinimumSize = new System.Drawing.Size(490, 312);
+            this.MinimumSize = new System.Drawing.Size(490, 263);
             this.Name = "AddUser";
             this.ShowIcon = false;
-            this.Text = "Ajouter un Utilisateur";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "User";
             this.Load += new System.EventHandler(this.AddUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

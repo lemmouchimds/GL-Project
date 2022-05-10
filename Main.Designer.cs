@@ -62,13 +62,12 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1012, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,20 +77,20 @@
             this.addToolStripMenuItem,
             this.vueAllToolStripMenuItem});
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 32);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 29);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
             this.addToolStripMenuItem.Text = "&Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // vueAllToolStripMenuItem
             // 
             this.vueAllToolStripMenuItem.Name = "vueAllToolStripMenuItem";
-            this.vueAllToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.vueAllToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
             this.vueAllToolStripMenuItem.Text = "&Vue All";
             // 
             // bnOperations

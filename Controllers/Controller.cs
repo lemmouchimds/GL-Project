@@ -46,8 +46,9 @@ namespace GLMainProject
 
         public static void EditClient(Client oldClient, Client newClient)
         {
-            DeleteClient(oldClient);
-            AddClient(newClient);   
+            //todo: edit from database
+            //DeleteClient(oldClient);
+            //AddClient(newClient);   
         }
         #endregion
 
