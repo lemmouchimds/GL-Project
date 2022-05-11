@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
@@ -12,10 +12,10 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Designation = c.String(),
-                        Adress = c.String(),
-                        Email = c.String(),
-                        Responsable = c.String(),
+                        Designation = c.String(maxLength: 200, storeType: "nvarchar"),
+                        Adress = c.String(maxLength: 200, storeType: "nvarchar"),
+                        Email = c.String(maxLength: 200, storeType: "nvarchar"),
+                        Responsable = c.String(maxLength: 200, storeType: "nvarchar"),
                         IsRevendeur = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
@@ -25,13 +25,13 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Referance = c.String(),
-                        Designation = c.String(),
+                        Referance = c.String(maxLength: 200, storeType: "nvarchar"),
+                        Designation = c.String(maxLength: 200, storeType: "nvarchar"),
                         ValNutritionnelle = c.Double(nullable: false),
                         PoidsNet = c.Double(nullable: false),
                         CoutRevient = c.Decimal(nullable: false, precision: 18, scale: 2),
                         GainSouaite = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
+                        Discriminator = c.String(nullable: false, maxLength: 128, storeType: "nvarchar"),
                         ProduitDerivee_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
@@ -43,8 +43,8 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Username = c.String(),
-                        Password = c.String(),
+                        Username = c.String(maxLength: 200, storeType: "nvarchar"),
+                        Password = c.String(maxLength: 200, storeType: "nvarchar"),
                         UserType = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

@@ -19,8 +19,8 @@ namespace GLMainProject.AgentDeVente
 
         private void refreshGrid()
         {
-            MessageBox.Show("REFRESH"); //todo: remove this
-            //dataGridViewClient.DataSource = Controller.Clients;
+            //MessageBox.Show("REFRESH"); //todo: remove this
+            dataGridViewClient.DataSource = Controller.Clients;
         }
 
         private void ClientUI_Load(object sender, EventArgs e)
@@ -31,7 +31,6 @@ namespace GLMainProject.AgentDeVente
         private void bnDelete_Click(object sender, EventArgs e)
         {
             //Controller.DeleteClient(SelectedClient());
-
         }
 
         private void bnEdit_Click(object sender, EventArgs e)

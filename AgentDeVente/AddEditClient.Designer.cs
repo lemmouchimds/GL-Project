@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblDesignation = new System.Windows.Forms.Label();
             this.lblResponsable = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbAdress = new System.Windows.Forms.TextBox();
             this.tbDesignation = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDesignation
@@ -101,13 +104,15 @@
             // bnOk
             // 
             this.bnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.bnOk.Location = new System.Drawing.Point(215, 342);
             this.bnOk.Name = "bnOk";
             this.bnOk.Size = new System.Drawing.Size(105, 35);
             this.bnOk.TabIndex = 15;
             this.bnOk.Text = "Ok";
             this.bnOk.UseVisualStyleBackColor = true;
-            this.bnOk.Click += new System.EventHandler(this.bnAjouter_Click);
+            this.bnOk.Click += new System.EventHandler(this.bnOk_Click);
+            this.bnOk.Validating += new System.ComponentModel.CancelEventHandler(this.bnOk_Validating);
             // 
             // tbResponsable
             // 
@@ -145,6 +150,10 @@
             this.tbDesignation.Size = new System.Drawing.Size(310, 26);
             this.tbDesignation.TabIndex = 16;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddEditClient
             // 
             this.AcceptButton = this.bnOk;
@@ -168,6 +177,8 @@
             this.Name = "AddEditClient";
             this.Text = "Client";
             this.Load += new System.EventHandler(this.AddEditClient_Load);
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.AddEditClient_Validating);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +197,6 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbAdress;
         private System.Windows.Forms.TextBox tbDesignation;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

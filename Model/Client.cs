@@ -16,11 +16,17 @@ namespace GLMainProject
 
         [Key]
         public int ID { get; set; }
+        [StringLength(200)]
         public string Designation { get; set; }
+        [StringLength(200)]
         public string Adress { get; set; }
+        [StringLength(200)]
         public string Email { get; set; }
+        [StringLength(200)]
         public string Responsable { get; set; }
 
         public bool IsRevendeur { get; set; }
+
+        public virtual ICollection<Facture> Factures { get; set; }
     }
 }

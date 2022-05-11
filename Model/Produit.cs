@@ -15,9 +15,12 @@ namespace GLMainProject
         }
 
         [Key]
-        public int ID { get; set; } 
+        public int ID { get; set; }
+        [StringLength(200)]
         public string Referance { get; set; }
+        [StringLength(200)]
         public string Designation { get; set; }
+        
         public double ValNutritionnelle { get; set; }
         public double PoidsNet { get; set; }
         public decimal CoutRevient { get; set; }

@@ -12,7 +12,8 @@ namespace GLMainProject
 
         [Key]
         public int ID { get; set; }
-        public Client client { get; set; }
+        public virtual int ClientID { get; set; }
+        public virtual Client Client { get; set; }
         public DateTime Date { get; set; }
         
     }

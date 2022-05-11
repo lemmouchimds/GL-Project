@@ -135,18 +135,22 @@
     <Compile Include="AgentDeVente\AddToCatalogue.Designer.cs">
       <DependentUpon>AddToCatalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDeVente\Client.cs" />
+    <Compile Include="Migrations\202205110444450_AddFacture.cs" />
+    <Compile Include="Migrations\202205110444450_AddFacture.designer.cs">
+      <DependentUpon>202205110444450_AddFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Client.cs" />
     <Compile Include="AgentDeVente\ClientUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AgentDeVente\ClientUI.Designer.cs">
       <DependentUpon>ClientUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDeVente\DetailFacture.cs" />
-    <Compile Include="AgentDeVente\Facture.cs" />
-    <Compile Include="AgentDeVente\OperationVente.cs" />
-    <Compile Include="AgentDeVente\Produit.cs" />
-    <Compile Include="AgentDeVente\Stock.cs" />
+    <Compile Include="Model\DetailFacture.cs" />
+    <Compile Include="Model\Facture.cs" />
+    <Compile Include="Model\OperationVente.cs" />
+    <Compile Include="Model\Produit.cs" />
+    <Compile Include="Model\Stock.cs" />
     <Compile Include="AgentDeVente\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,22 +176,22 @@
     <Compile Include="Directeur\DirecteurUI.Designer.cs">
       <DependentUpon>DirecteurUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GLprojectDBcontext.cs" />
+    <Compile Include="Model\GLprojectDBcontext.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204261733237_initial.cs" />
-    <Compile Include="Migrations\202204261733237_initial.designer.cs">
-      <DependentUpon>202204261733237_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202205110436048_Init.cs" />
+    <Compile Include="Migrations\202205110436048_Init.designer.cs">
+      <DependentUpon>202205110436048_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Main\User.cs" />
-    <Compile Include="Main\UserType.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserType.cs" />
     <EmbeddedResource Include="Main\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,8 +222,11 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204261733237_initial.resx">
-      <DependentUpon>202204261733237_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205110436048_Init.resx">
+      <DependentUpon>202205110436048_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205110444450_AddFacture.resx">
+      <DependentUpon>202205110444450_AddFacture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
