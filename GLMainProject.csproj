@@ -118,6 +118,10 @@
     <Compile Include="Main\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205121307374_AddingDocuments.cs" />
+    <Compile Include="Migrations\202205121307374_AddingDocuments.designer.cs">
+      <DependentUpon>202205121307374_AddingDocuments.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\AddEditClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +199,9 @@
     <Compile Include="Test.cs" />
     <EmbeddedResource Include="Main\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205121307374_AddingDocuments.resx">
+      <DependentUpon>202205121307374_AddingDocuments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AddEditClient.resx">
       <DependentUpon>AddEditClient.cs</DependentUpon>

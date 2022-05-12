@@ -27,6 +27,6 @@ namespace GLMainProject
 
         public bool IsRevendeur { get; set; }
 
-        public virtual ICollection<Document> Factures { get; set; }
+        public virtual ICollection<Document> Documents { get; set; }
     }
 }

@@ -54,7 +54,7 @@ namespace GLMainProject.AgentDeVente
                     GainSouaite = decimal.Parse(tbGainSouaite.Text)
                 };
 
-                bd.Produit.Add(result);
+                bd.Products.Add(result);
                 bd.SaveChanges();
             }
         }

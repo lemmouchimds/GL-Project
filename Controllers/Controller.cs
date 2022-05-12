@@ -20,7 +20,7 @@ namespace GLMainProject
             {
                 using (var db = new GLprojectDBcontext())
                 {
-                    return db.Client.ToList();
+                    return db.Customers.ToList();
                 }
             }
                 
@@ -30,7 +30,7 @@ namespace GLMainProject
         {
             using(var db = new GLprojectDBcontext())
             {
-                db.Client.Add(client);
+                db.Customers.Add(client);
                 db.SaveChanges();
             }
         }
@@ -39,7 +39,7 @@ namespace GLMainProject
         {
             using( var db = new GLprojectDBcontext())
             {
-                db.Client.Remove(client);
+                db.Customers.Remove(client);
                 db.SaveChanges ();
             }
         }
@@ -59,7 +59,7 @@ namespace GLMainProject
             {
                 using (var db = new GLprojectDBcontext())
                 {
-                    return db.Produit.ToList();
+                    return db.Products.ToList();
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace GLMainProject
         {
             using(var db = new GLprojectDBcontext())
             {
-                db.Produit.Add(produit);
+                db.Products.Add(produit);
                 db.SaveChanges();
             }
 
