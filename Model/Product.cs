@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace GLMainProject
 {
-    public class Produit
+    public class Product
     {
-        public Produit()
+        public Product()
         {
 
         }
 
         [Key]
         public int ID { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Referance { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Designation { get; set; }
         
         public double ValNutritionnelle { get; set; }
@@ -33,14 +33,14 @@ namespace GLMainProject
 
     }
 
-    public class ProduitDerivee : Produit
+    public class ProduitDerivee : Product
     {
         public ProduitDerivee()
         {
 
         }
 
-        public List<Produit> Ingredients { get; set; } //todo: not sure of that
+        public List<Product> Ingredients { get; set; } //todo: not sure of that
     }
 
 

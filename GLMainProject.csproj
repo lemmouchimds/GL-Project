@@ -111,50 +111,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Consts.cs" />
     <Compile Include="Main\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDeVente\AddEditClient.cs">
+    <Compile Include="UI\AddEditClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgentDeVente\AddEditClient.Designer.cs">
+    <Compile Include="UI\AddEditClient.Designer.cs">
       <DependentUpon>AddEditClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDeVente\AddEditDelet.cs">
+    <Compile Include="UI\AddEditDelet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AgentDeVente\AddEditDelet.Designer.cs">
+    <Compile Include="UI\AddEditDelet.Designer.cs">
       <DependentUpon>AddEditDelet.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDeVente\AddToCatalogue.cs">
+    <Compile Include="UI\AddToCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgentDeVente\AddToCatalogue.Designer.cs">
+    <Compile Include="UI\AddToCatalogue.Designer.cs">
       <DependentUpon>AddToCatalogue.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202205110444450_AddFacture.cs" />
     <Compile Include="Migrations\202205110444450_AddFacture.designer.cs">
       <DependentUpon>202205110444450_AddFacture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Client.cs" />
-    <Compile Include="AgentDeVente\ClientUI.cs">
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="UI\ClientUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgentDeVente\ClientUI.Designer.cs">
+    <Compile Include="UI\ClientUI.Designer.cs">
       <DependentUpon>ClientUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DetailFacture.cs" />
-    <Compile Include="Model\Facture.cs" />
-    <Compile Include="Model\OperationVente.cs" />
-    <Compile Include="Model\Produit.cs" />
-    <Compile Include="Model\Stock.cs" />
-    <Compile Include="AgentDeVente\StockUI.cs">
+    <Compile Include="Model\DocumentDetail.cs" />
+    <Compile Include="Model\Document.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Inventory.cs" />
+    <Compile Include="UI\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgentDeVente\StockUI.Designer.cs">
+    <Compile Include="UI\StockUI.Designer.cs">
       <DependentUpon>StockUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Authentification.cs">
@@ -163,10 +163,10 @@
     <Compile Include="Main\Authentification.Designer.cs">
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDeVente\Catalogue.cs">
+    <Compile Include="UI\Catalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgentDeVente\Catalogue.Designer.cs">
+    <Compile Include="UI\Catalogue.Designer.cs">
       <DependentUpon>Catalogue.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\Controller.cs" />
@@ -196,22 +196,22 @@
     <EmbeddedResource Include="Main\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\AddEditClient.resx">
+    <EmbeddedResource Include="UI\AddEditClient.resx">
       <DependentUpon>AddEditClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\AddEditDelet.resx">
+    <EmbeddedResource Include="UI\AddEditDelet.resx">
       <DependentUpon>AddEditDelet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\AddToCatalogue.resx">
+    <EmbeddedResource Include="UI\AddToCatalogue.resx">
       <DependentUpon>AddToCatalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\Catalogue.resx">
+    <EmbeddedResource Include="UI\Catalogue.resx">
       <DependentUpon>Catalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\ClientUI.resx">
+    <EmbeddedResource Include="UI\ClientUI.resx">
       <DependentUpon>ClientUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDeVente\StockUI.resx">
+    <EmbeddedResource Include="UI\StockUI.resx">
       <DependentUpon>StockUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Authentification.resx">

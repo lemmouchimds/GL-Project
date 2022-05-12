@@ -10,9 +10,9 @@ namespace GLMainProject
         }
         [Key]
         public int Id { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Username { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Password { get; set; }
         public UserType UserType { get; set; }
     }

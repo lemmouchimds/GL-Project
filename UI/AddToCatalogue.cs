@@ -44,7 +44,7 @@ namespace GLMainProject.AgentDeVente
 
             using(var bd = new GLprojectDBcontext())
             {
-                var result = new Produit
+                var result = new Product
                 {
                     Referance = tbRef.Text,
                     Designation = tbDes.Text,

@@ -11,9 +11,12 @@ namespace GLMainProject
 
         }
 
-        public DbSet<Produit> Produit { get; set; }
-        public DbSet<Client> Client { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<DocumentDetail> DocumentDetails { get; set; }
+        public DbSet<Inventory> Inventory { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

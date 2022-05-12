@@ -14,7 +14,7 @@ namespace GLMainProject
 
         
 
-        public static List<Client> Clients 
+        public static List<Customer> Clients 
         { 
             get
             {
@@ -26,7 +26,7 @@ namespace GLMainProject
                 
         }
         //public static List<Client> GetClient()
-        public static void AddClient(Client client)
+        public static void AddClient(Customer client)
         {
             using(var db = new GLprojectDBcontext())
             {
@@ -35,7 +35,7 @@ namespace GLMainProject
             }
         }
 
-        public static void DeleteClient(Client client)
+        public static void DeleteClient(Customer client)
         {
             using( var db = new GLprojectDBcontext())
             {
@@ -44,7 +44,7 @@ namespace GLMainProject
             }
         }
 
-        public static void EditClient(Client oldClient, Client newClient)
+        public static void EditClient(Customer oldClient, Customer newClient)
         {
             //todo: edit from database
             //DeleteClient(oldClient);
@@ -53,7 +53,7 @@ namespace GLMainProject
         #endregion
 
         #region produit
-        public static List<Produit> Produits
+        public static List<Product> Produits
         {
             get
             {
@@ -64,7 +64,7 @@ namespace GLMainProject
             }
         }
 
-        public static void AddProduit(Produit produit)
+        public static void AddProduit(Product produit)
         {
             using(var db = new GLprojectDBcontext())
             {

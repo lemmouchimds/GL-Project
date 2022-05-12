@@ -58,7 +58,7 @@ namespace GLMainProject.AgentDeVente
                 return;
             }
 
-            var result = new Client
+            var result = new Customer
             {
                 Designation = tbDesignation.Text,
                 Adress = tbAdress.Text,

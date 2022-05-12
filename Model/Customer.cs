@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 
 namespace GLMainProject
 {
-    public class Client
+    public class Customer
     {
-        public Client()
+        public Customer()
         {
 
         }
 
         [Key]
         public int ID { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Designation { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Adress { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Email { get; set; }
-        [StringLength(200)]
+        [StringLength(Consts.MaxStringLength)]
         public string Responsable { get; set; }
 
         public bool IsRevendeur { get; set; }
 
-        public virtual ICollection<Facture> Factures { get; set; }
+        public virtual ICollection<Document> Factures { get; set; }
     }
 }
