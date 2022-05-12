@@ -30,7 +30,14 @@ namespace GLMainProject.AgentDeVente
 
         private void bnDelete_Click(object sender, EventArgs e)
         {
-            //Controller.DeleteClient(SelectedClient());
+            var id = SelectedClientID();
+            if (id < 0)
+            {
+                return;
+            }
+
+            Controller.DeleteClient(id);
+            refreshGrid();
         }
 
         private void bnEdit_Click(object sender, EventArgs e)
@@ -39,24 +46,28 @@ namespace GLMainProject.AgentDeVente
             
         }
 
-
-        private bool IsOneSelected()
+        /// <summary>
+        /// To know if there is only one row selected
+        /// </summary>
+        /// <returns>true if one row is selected, else it's false</returns>
+        private bool IsOneRowSelected()
         {
-            return dataGridViewClient.SelectedCells.Count <= 0 || dataGridViewClient.SelectedCells.Count > 1;
+            return dataGridViewClient.SelectedRows.Count == 1;
         }
 
-        private object SelectedClient()
+        private int SelectedClientID()
         {
-            if (!IsOneSelected())
+            if (!IsOneRowSelected())
             {
                 MessageBox.Show("Selectionne une cellule.");
-                return null;
+                return -1;
             }
 
-            var result = dataGridViewClient.SelectedCells[0];
+            dynamic result = dataGridViewClient.SelectedRows[0].DataBoundItem;
+            int ID = result.ID;
             
 
-            return result;
+            return ID;
         }
     }
 }

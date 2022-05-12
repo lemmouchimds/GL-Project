@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GLMainProject
@@ -15,6 +16,8 @@ namespace GLMainProject
         public virtual int ClientID { get; set; }
         public virtual Client Client { get; set; }
         public DateTime Date { get; set; }
+
+        public virtual ICollection<DetailFacture> Details { get; set; }
         
     }
 }

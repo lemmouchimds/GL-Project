@@ -35,10 +35,14 @@ namespace GLMainProject
             }
         }
 
-        public static void DeleteClient(Client client)
+        public static void DeleteClient(int IDD)
         {
             using( var db = new GLprojectDBcontext())
             {
+                Client client = db.Client.FirstOrDefault(cl => cl.ID == IDD);
+                if( client == null )
+                    return;
+
                 db.Client.Remove(client);
                 db.SaveChanges ();
             }

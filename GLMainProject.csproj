@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202205110444450_AddFacture.designer.cs">
       <DependentUpon>202205110444450_AddFacture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205120217257_ChangeFacture.cs" />
+    <Compile Include="Migrations\202205120217257_ChangeFacture.designer.cs">
+      <DependentUpon>202205120217257_ChangeFacture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Client.cs" />
     <Compile Include="AgentDeVente\ClientUI.cs">
       <SubType>Form</SubType>
@@ -227,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205110444450_AddFacture.resx">
       <DependentUpon>202205110444450_AddFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205120217257_ChangeFacture.resx">
+      <DependentUpon>202205120217257_ChangeFacture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
