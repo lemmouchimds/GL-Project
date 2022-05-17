@@ -25,6 +25,7 @@ namespace GLMainProject
         public double PoidsNet { get; set; }
         public decimal CoutRevient { get; set; }
         public decimal GainSouaite { get; set; }
+        public virtual ICollection<Inventory> Inventories { get; set; }
         public decimal PrixFinal
         {
             get { return CoutRevient + GainSouaite; }

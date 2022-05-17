@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GLMainProject.Directeur
+namespace GLMainProject.UI
 {
-    public partial class DirecteurUI : Form
+    public partial class UserUI : Form
     {
-        public DirecteurUI()
+        public UserUI()
         {
             InitializeComponent();
-        }
-
-        private void bnUsers_Click(object sender, EventArgs e)
-        {
-            // todo: var users = new users
         }
     }
 }

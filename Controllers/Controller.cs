@@ -12,8 +12,6 @@ namespace GLMainProject
     {
         #region client
 
-        
-
         public static List<Customer> Clients 
         { 
             get
@@ -25,7 +23,7 @@ namespace GLMainProject
             }
                 
         }
-        //public static List<Client> GetClient()
+
         public static void AddClient(Customer client)
         {
             using(var db = new GLprojectDBcontext())
@@ -35,21 +33,44 @@ namespace GLMainProject
             }
         }
 
-        public static void DeleteClient(Customer client)
+        public static bool EditClient(Customer customer)
         {
-            using( var db = new GLprojectDBcontext())
+            using(var db = new GLprojectDBcontext())
             {
-                db.Customers.Remove(client);
-                db.SaveChanges ();
+                var newCustomerInfos = db.Customers.FirstOrDefault(cust => cust.ID == customer.ID);
+                if (newCustomerInfos != null)
+                {
+                    newCustomerInfos.Designation = customer.Designation;
+                    newCustomerInfos.Email = customer.Email;
+                    newCustomerInfos.IsRevendeur = customer.IsRevendeur;
+                    newCustomerInfos.Responsable = customer.Responsable;
+                    newCustomerInfos.Adress = customer.Adress;
+
+                    db.SaveChanges();
+                    return true;
+                }
+
+                return false;
             }
         }
 
-        public static void EditClient(Customer oldClient, Customer newClient)
+        public static bool DeleteClient(int id)
         {
-            //todo: edit from database
-            //DeleteClient(oldClient);
-            //AddClient(newClient);   
+
+            using( var db = new GLprojectDBcontext())
+            {
+                var cust = db.Customers.FirstOrDefault(c => c.ID == id);
+                if (cust == null)
+                {
+                    return false;
+                }
+
+                db.Customers.Remove(cust);
+                db.SaveChanges ();
+                return true;
+            }
         }
+
         #endregion
 
         #region produit
@@ -71,11 +92,67 @@ namespace GLMainProject
                 db.Products.Add(produit);
                 db.SaveChanges();
             }
-
         }
         #endregion
 
+        #region user
 
+        public static List<User> Users
+        {
+            get
+            {
+                using (var db = new GLprojectDBcontext())
+                {
+                    return db.Users.ToList();
+                }
+            }
+
+        }
+
+        public static void AddUser(User user)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+        }
+
+        public static void EditUser(User user)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                var newUserInfos = db.Users.FirstOrDefault(use => use.Id == user.Id);
+                if (newUserInfos != null)
+                {
+                    newUserInfos.Username = user.Username;
+                    newUserInfos.Password = user.Password;
+                    newUserInfos.UserType = user.UserType;
+
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        
+        public static bool DeleteUser(int id)
+        {
+
+            using( var db = new GLprojectDBcontext())
+            {
+                var user = db.Users.FirstOrDefault(c => c.Id == id);
+                if (user == null)
+                {
+                    return false;
+                }
+
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        #endregion
 
     }
 }
