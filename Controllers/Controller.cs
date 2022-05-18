@@ -54,7 +54,7 @@ namespace GLMainProject
                 return false;
             }
         }
-
+        
         public static bool DeleteClient(int id)
         {
 
@@ -165,6 +165,15 @@ namespace GLMainProject
                 db.SaveChanges();
             }
         }
+        internal static User GetUserById(int id)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Users.FirstOrDefault(u=> u.Id == id);
+            }
+
+        }
+
 
         public static void EditUser(User user)
         {

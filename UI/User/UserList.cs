@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GLMainProject.Dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,52 @@ namespace GLMainProject.UI.User
 
                 }
             }
+        }
+
+        private void bnEdit_Click(object sender, EventArgs e)
+        {
+            if (gridUsers.SelectedRows.Count <= 0)
+                return;
+            var currentUser = gridUsers.SelectedRows[0].DataBoundItem as UserDto;
+            if (currentUser == null)
+                return;
+            
+            var user = Controller.GetUserById(currentUser.Id);
+            if (user == null)
+                return;
+
+            using (var newUser = new AddUser()
+            {
+                CurrentUser = user
+            })
+            {
+                if (newUser.ShowDialog() == DialogResult.OK)
+                {
+                    Controller.EditUser(newUser.CurrentUser);
+                    refreshGrid();
+                }
+            }
+        }
+
+        private void bnDelete_Click(object sender, EventArgs e)
+        {
+            if (gridUsers.SelectedRows.Count <= 0)
+                return;
+            var currentUser = gridUsers.SelectedRows[0].DataBoundItem as UserDto;
+            if (currentUser == null)
+                return;
+            if(currentUser.Id == 1)
+            {
+                MessageBox.Show("Impossible de supprimer l'administrateur de system","Alerte",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                return;
+            }
+            var dialogResult = MessageBox.Show($"Voulez-vous vraiment supprimer l'utilisateur '{currentUser.Username}'?", "Attention!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes && Controller.DeleteUser(currentUser.Id))
+            {
+                refreshGrid();
+            }
+            
         }
     }
 }

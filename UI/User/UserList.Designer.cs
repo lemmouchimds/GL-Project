@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bnAdd = new System.Windows.Forms.Button();
-            this.bnEdit = new System.Windows.Forms.Button();
             this.bnDelete = new System.Windows.Forms.Button();
+            this.bnEdit = new System.Windows.Forms.Button();
+            this.bnAdd = new System.Windows.Forms.Button();
             this.gridUsers = new System.Windows.Forms.DataGridView();
             this.clID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,15 +51,15 @@
             this.panel1.Size = new System.Drawing.Size(800, 44);
             this.panel1.TabIndex = 0;
             // 
-            // bnAdd
+            // bnDelete
             // 
-            this.bnAdd.Location = new System.Drawing.Point(12, 12);
-            this.bnAdd.Name = "bnAdd";
-            this.bnAdd.Size = new System.Drawing.Size(75, 23);
-            this.bnAdd.TabIndex = 0;
-            this.bnAdd.Text = "Ajouter";
-            this.bnAdd.UseVisualStyleBackColor = true;
-            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
+            this.bnDelete.Location = new System.Drawing.Point(174, 12);
+            this.bnDelete.Name = "bnDelete";
+            this.bnDelete.Size = new System.Drawing.Size(75, 23);
+            this.bnDelete.TabIndex = 0;
+            this.bnDelete.Text = "Supprimer";
+            this.bnDelete.UseVisualStyleBackColor = true;
+            this.bnDelete.Click += new System.EventHandler(this.bnDelete_Click);
             // 
             // bnEdit
             // 
@@ -69,15 +69,17 @@
             this.bnEdit.TabIndex = 0;
             this.bnEdit.Text = "Modifier";
             this.bnEdit.UseVisualStyleBackColor = true;
+            this.bnEdit.Click += new System.EventHandler(this.bnEdit_Click);
             // 
-            // bnDelete
+            // bnAdd
             // 
-            this.bnDelete.Location = new System.Drawing.Point(174, 12);
-            this.bnDelete.Name = "bnDelete";
-            this.bnDelete.Size = new System.Drawing.Size(75, 23);
-            this.bnDelete.TabIndex = 0;
-            this.bnDelete.Text = "Supprimer";
-            this.bnDelete.UseVisualStyleBackColor = true;
+            this.bnAdd.Location = new System.Drawing.Point(12, 12);
+            this.bnAdd.Name = "bnAdd";
+            this.bnAdd.Size = new System.Drawing.Size(75, 23);
+            this.bnAdd.TabIndex = 0;
+            this.bnAdd.Text = "Ajouter";
+            this.bnAdd.UseVisualStyleBackColor = true;
+            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
             // gridUsers
             // 
