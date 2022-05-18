@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace GLMainProject
 {
-    public class Consts
+    public class  Consts
     {
         public const int MaxStringLength = 256;
+
+        public static User CurrentUser { get; set; }
     }
 }

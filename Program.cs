@@ -16,6 +16,12 @@ namespace GLMainProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            using (var dlg = new Authentification()) 
+            {
+                dlg.ShowDialog();
+            }
+
             Application.Run(new Main());
         }
     }

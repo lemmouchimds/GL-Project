@@ -17,6 +17,8 @@ namespace GLMainProject.AgentDeVente
             InitializeComponent();
         }
 
+        public Product Product { get; set; }
+
         private void AddToCatalogue_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(

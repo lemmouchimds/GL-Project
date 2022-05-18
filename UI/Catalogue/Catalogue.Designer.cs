@@ -59,6 +59,7 @@
             this.bnEdit.TabIndex = 8;
             this.bnEdit.Text = "!";
             this.bnEdit.UseVisualStyleBackColor = true;
+            this.bnEdit.Click += new System.EventHandler(this.bnEdit_Click);
             // 
             // bnDelete
             // 

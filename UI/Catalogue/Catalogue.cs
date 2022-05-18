@@ -25,12 +25,25 @@ namespace GLMainProject
         private void bnAdd_Click(object sender, EventArgs e)
         {
             var add = new AgentDeVente.AddToCatalogue();
+            add.Product = new Product();
             add.ShowDialog();
         }
 
         private void Catalogue_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void refreshGrid()
+        {
+            //dataGridViewCatalogue.DataSource = Controller;
+        }
+
+        private void bnEdit_Click(object sender, EventArgs e)
+        {
+            var edit = new AgentDeVente.AddToCatalogue();
+            //add.Product = new Product();
+            edit.ShowDialog();
         }
     }
 }

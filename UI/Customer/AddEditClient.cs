@@ -15,6 +15,8 @@ namespace GLMainProject.AgentDeVente
         //{
         //}
 
+        public Customer Customer { get; set; }
+
         private void AddEditClient_Load(object sender, EventArgs e)
         {
 
@@ -67,9 +69,6 @@ namespace GLMainProject.AgentDeVente
                 IsRevendeur = cbRevenduer.Checked
             };
 
-
-
-            //todo: uncomment this "Controller.AddClient(result);"
             Controller.AddClient(result);
         }
     }

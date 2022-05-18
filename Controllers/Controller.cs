@@ -93,6 +93,38 @@ namespace GLMainProject
                 db.SaveChanges();
             }
         }
+
+        public static void EditProduct(int id)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                var newProInfos = db.Products.FirstOrDefault(pro => pro.ID == id);
+                if (newProInfos != null)
+                {
+                    //newProInfos.Referance = 
+
+                    db.SaveChanges();
+                }
+            }
+        }
+
+
+        public static bool DeleteProduit(int id)
+        {
+
+            using (var db = new GLprojectDBcontext())
+            {
+                var product = db.Products.FirstOrDefault(prod => prod.ID == id);
+                if (product == null)
+                {
+                    return false;
+                }
+
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+        }
         #endregion
 
         #region user
@@ -106,7 +138,6 @@ namespace GLMainProject
                     return db.Users.ToList();
                 }
             }
-
         }
 
         public static void AddUser(User user)
@@ -134,11 +165,24 @@ namespace GLMainProject
             }
         }
 
-        
+        public static User UserExicts(string username)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                var user = db.Users.FirstOrDefault(c => c.Username == username);
+                if (user != null)
+                {
+                    return user;
+                }
+
+                return null;
+            }
+        }
+
         public static bool DeleteUser(int id)
         {
 
-            using( var db = new GLprojectDBcontext())
+            using (var db = new GLprojectDBcontext())
             {
                 var user = db.Users.FirstOrDefault(c => c.Id == id);
                 if (user == null)
@@ -154,5 +198,66 @@ namespace GLMainProject
 
         #endregion
 
+        #region Document
+        public static List<Document> Documents
+        {
+            get
+            {
+                using (var db = new GLprojectDBcontext())
+                {
+                    return db.Documents.ToList();
+                }
+            }
+
+        }
+
+        public static void AddDocument(Document document)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                db.Documents.Add(document);
+                db.SaveChanges();
+            }
+        }
+
+        public static bool EditDocument(Document document)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                var newDocumentInfos = db.Documents.FirstOrDefault(cust => cust.ID == document.ID);
+                if (newDocumentInfos != null)
+                {
+                    newDocumentInfos.Reference = document.Reference;
+                    newDocumentInfos.PaymentDate = document.PaymentDate;
+                    newDocumentInfos.CustomerID = document.CustomerID;  
+                    newDocumentInfos.Customer = document.Customer;
+                    newDocumentInfos.Date = document.Date;
+                    newDocumentInfos.Payed = document.Payed;
+
+                    db.SaveChanges();
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        public static bool DeleteDocument(int id)
+        {
+
+            using (var db = new GLprojectDBcontext())
+            {
+                var doc = db.Documents.FirstOrDefault(c => c.ID == id);
+                if (doc == null)
+                {
+                    return false;
+                }
+
+                db.Documents.Remove(doc);
+                db.SaveChanges();
+                return true;
+            }
+        }
+        #endregion
     }
 }

@@ -17,18 +17,12 @@ namespace GLMainProject
             InitializeComponent();
         }
 
+        
         private void Main_Shown(object sender, EventArgs e)
         {
-            Form authentification = new Authentification();
-            authentification.ShowDialog();
+            
         }
 
-        private void bnCatalogue_Click(object sender, EventArgs e)
-        {
-            var cata = new Catalogue();
-            //cata.Parent = this;
-            cata.Show();
-        }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -36,11 +30,37 @@ namespace GLMainProject
             newUser.ShowDialog();
         }
 
-        private void bnClient_Click(object sender, EventArgs e)
+
+        private void clientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var client = new AgentDeVente.ClientUI();
             //client.Parent = this;
             client.Show();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if (Consts.CurrentUser.UserType != UserType.Directeur)
+            {
+                usersToolStripMenuItem.Visible = false;
+            }
+        }
+
+        private void catalogueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cata = new Catalogue();
+            cata.Show();
+        }
+
+        private void documentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vueAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //var ui = UI.UserUI();
+
         }
     }
 }

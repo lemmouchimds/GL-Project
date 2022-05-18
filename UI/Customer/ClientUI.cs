@@ -13,13 +13,13 @@ namespace GLMainProject.AgentDeVente
         private void bnAdd_Click(object sender, EventArgs e)
         {
             var add = new AgentDeVente.AddEditClient();
+            add.Customer = new Customer();
             add.ShowDialog();
             refreshGrid();
         }
 
         private void refreshGrid()
         {
-            //MessageBox.Show("REFRESH"); //todo: remove this
             dataGridViewClient.DataSource = Controller.Clients;
         }
 
@@ -30,13 +30,21 @@ namespace GLMainProject.AgentDeVente
 
         private void bnDelete_Click(object sender, EventArgs e)
         {
-            //Controller.DeleteClient(SelectedClient());
+            //todo: delete customers
+            var cust = SelectedClient() as Customer;
+            if (cust == null)
+            { return; }
+
+            Controller.DeleteClient(cust.ID);
+            refreshGrid();
         }
 
         private void bnEdit_Click(object sender, EventArgs e)
         {
             var edit = new AgentDeVente.AddEditClient();
-            
+            edit.Customer = SelectedClient() as Customer; //todo: make this work
+            edit.ShowDialog();
+            refreshGrid();
         }
 
 

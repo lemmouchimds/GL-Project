@@ -19,9 +19,19 @@ namespace GLMainProject
 
         private void bnOK_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            var thisUser = Controller.UserExicts(tbUsername.Text);
+            if (thisUser != null && thisUser.Password == tbPassword.Text)
+            {
+                Consts.CurrentUser = thisUser;
+                DialogResult = DialogResult.OK;
+            }
+
+            DialogResult = DialogResult.None;
         }
 
-        
+        private void Authentification_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

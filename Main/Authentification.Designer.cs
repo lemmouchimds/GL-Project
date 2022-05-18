@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.bnOK = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPswrd = new System.Windows.Forms.Label();
             this.bnCancel = new System.Windows.Forms.Button();
@@ -45,21 +45,20 @@
             this.bnOK.TabIndex = 0;
             this.bnOK.Text = "OK";
             this.bnOK.UseVisualStyleBackColor = true;
-            this.bnOK.Click += new System.EventHandler(this.bnOK_Click);
             // 
-            // textBox1
+            // tbPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(510, 26);
-            this.textBox1.TabIndex = 1;
+            this.tbPassword.Location = new System.Drawing.Point(98, 74);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(510, 26);
+            this.tbPassword.TabIndex = 1;
             // 
-            // textBox2
+            // tbUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(510, 26);
-            this.textBox2.TabIndex = 2;
+            this.tbUsername.Location = new System.Drawing.Point(98, 24);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(510, 26);
+            this.tbUsername.TabIndex = 2;
             // 
             // lblUser
             // 
@@ -102,8 +101,8 @@
             this.Controls.Add(this.bnCancel);
             this.Controls.Add(this.lblPswrd);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.bnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(642, 221);
@@ -120,8 +119,8 @@
         #endregion
 
         private System.Windows.Forms.Button bnOK;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPswrd;
         private System.Windows.Forms.Button bnCancel;
