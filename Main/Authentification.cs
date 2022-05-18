@@ -24,6 +24,7 @@ namespace GLMainProject
             {
                 Consts.CurrentUser = thisUser;
                 DialogResult = DialogResult.OK;
+                return;
             }
             MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect!","Authetification",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             DialogResult = DialogResult.None;
