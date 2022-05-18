@@ -284,6 +284,7 @@ namespace GLMainProject
         {
             switch (type)
             {
+                default:
                 case UserType.AgentVente:
                     return "Agent de vente";
                 case UserType.AgentCommercial:
@@ -291,8 +292,21 @@ namespace GLMainProject
                 case UserType.Directeur:
                     return "Directeur";
 
+            }
+        }
+
+        public static UserType ToUserType(this string txt)
+        {
+            switch (txt)
+            {
                 default:
-                    return "";
+                case "Agent de vente":
+                    return UserType.AgentVente;
+                case "Agent Commercial":
+                    return UserType.AgentCommercial;
+                case "Directeur":
+                    return UserType.Directeur;
+
             }
         }
     }

@@ -16,19 +16,28 @@ namespace GLMainProject
         {
             InitializeComponent();
         }
-
+        public User CurrentUser { get; set; }
         private void AddUser_Load(object sender, EventArgs e)
         {
+            tbUsername.DataBindings.Add("Text", CurrentUser, "Username");
+            tbPassword.DataBindings.Add("Text", CurrentUser, "Password");
+
             GetUsersType();
+
         }
 
         private void GetUsersType()
         {
-            var names = Enum.GetNames(typeof(UserType));
-            foreach (var name in names)
+            var values = Enum.GetValues(typeof(UserType));
+            foreach (UserType value in values)
             {
-                cbUserType.Items.Add(name);
+                cbUserType.Items.Add(value.FriendlyName());
             }
+        }
+
+        private void cbUserType_TextChanged(object sender, EventArgs e)
+        {
+            CurrentUser.UserType = cbUserType.Text.ToUserType();
         }
     }
 }

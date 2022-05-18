@@ -28,9 +28,17 @@ namespace GLMainProject.UI.User
 
         private void bnAdd_Click(object sender, EventArgs e)
         {
-            var newUser = new AddUser();
-            newUser.ShowDialog();
-            refreshGrid();
+            using (var newUser = new AddUser()
+            {
+                CurrentUser = new GLMainProject.User()
+            }) { 
+                if (newUser.ShowDialog() == DialogResult.OK)
+                {
+                    Controller.AddUser(newUser.CurrentUser);
+                    refreshGrid();
+
+                }
+            }
         }
     }
 }
