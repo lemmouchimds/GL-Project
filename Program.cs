@@ -19,7 +19,10 @@ namespace GLMainProject
 
             using (var dlg = new Authentification()) 
             {
-                dlg.ShowDialog();
+                if(dlg.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
             }
 
             Application.Run(new Main());

@@ -165,7 +165,7 @@ namespace GLMainProject
             }
         }
 
-        public static User UserExicts(string username)
+        public static User UserExist(string username)
         {
             using (var db = new GLprojectDBcontext())
             {

@@ -19,13 +19,13 @@ namespace GLMainProject
 
         private void bnOK_Click(object sender, EventArgs e)
         {
-            var thisUser = Controller.UserExicts(tbUsername.Text);
+            var thisUser = Controller.UserExist(tbUsername.Text);
             if (thisUser != null && thisUser.Password == tbPassword.Text)
             {
                 Consts.CurrentUser = thisUser;
                 DialogResult = DialogResult.OK;
             }
-
+            MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect!","Authetification",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             DialogResult = DialogResult.None;
         }
 
@@ -33,5 +33,6 @@ namespace GLMainProject
         {
 
         }
+
     }
 }
