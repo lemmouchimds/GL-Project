@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GLMainProject.UI;
+using GLMainProject.UI.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,8 +28,6 @@ namespace GLMainProject
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var newUser = new AddUser();
-            newUser.ShowDialog();
         }
 
 
@@ -40,6 +40,23 @@ namespace GLMainProject
 
         private void Main_Load(object sender, EventArgs e)
         {
+            ShowHideAdminControls();
+            SetDashboardForm();
+        }
+        DashboardForm dashboardForm;
+        private void SetDashboardForm()
+        {
+            dashboardForm = new DashboardForm
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            dashboardForm.Show();
+        }
+
+        private void ShowHideAdminControls()
+        {
+            Text += $"- ({Consts.CurrentUser.Username})";
             if (Consts.CurrentUser.UserType != UserType.Directeur)
             {
                 usersToolStripMenuItem.Visible = false;
@@ -61,6 +78,16 @@ namespace GLMainProject
         {
             //var ui = UI.UserUI();
 
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new UserList()
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            form.Show();
         }
     }
 }

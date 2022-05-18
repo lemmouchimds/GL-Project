@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GLMainProject.Dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -140,6 +141,22 @@ namespace GLMainProject
             }
         }
 
+        public static List<UserDto> ListAllUsers()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Users.ToList()
+                    .Select(u => new UserDto
+                    {
+                        Id = u.Id,
+                        Username = u.Username,
+                        Type = u.UserType.FriendlyName()
+                    })
+                    .ToList();
+            }
+
+        }
+
         public static void AddUser(User user)
         {
             using (var db = new GLprojectDBcontext())
@@ -259,5 +276,24 @@ namespace GLMainProject
             }
         }
         #endregion
+    }
+
+    public static class Extensions
+    {
+        public static string FriendlyName(this UserType type)
+        {
+            switch (type)
+            {
+                case UserType.AgentVente:
+                    return "Agent de vente";
+                case UserType.AgentCommercial:
+                    return "Agent Commercial";
+                case UserType.Directeur:
+                    return "Directeur";
+
+                default:
+                    return "";
+            }
+        }
     }
 }

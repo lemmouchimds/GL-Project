@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Consts.cs" />
+    <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Main\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +153,12 @@
     <Compile Include="Model\Document.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Inventory.cs" />
+    <Compile Include="UI\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +202,12 @@
     <Compile Include="UI\UserUI.Designer.cs">
       <DependentUpon>UserUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\User\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\User\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Customer\ClientUI.resx">
       <DependentUpon>ClientUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\StockUI.resx">
       <DependentUpon>StockUI.cs</DependentUpon>
@@ -239,6 +255,9 @@
     </Compile>
     <EmbeddedResource Include="UI\UserUI.resx">
       <DependentUpon>UserUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
