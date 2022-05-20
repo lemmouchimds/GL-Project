@@ -22,7 +22,24 @@ namespace GLMainProject
                     return db.Customers.ToList();
                 }
             }
-                
+        }
+
+        public static List<CustomerDto> ListAllCusts()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Customers.ToList()
+                    .Select(cust => new CustomerDto
+                    {
+                        ID = cust.ID,
+                        Designation = cust.Designation,
+                        Email = cust.Email,
+                        Adress = cust.Adress,
+                        Responsable = cust.Responsable,
+                        IsRevendeur = cust.IsRevendeur.ToString()
+                    })
+                    .ToList();
+            }
         }
 
         public static void AddClient(Customer client)
@@ -31,6 +48,14 @@ namespace GLMainProject
             {
                 db.Customers.Add(client);
                 db.SaveChanges();
+            }
+        }
+
+        public static Customer GetCustById(int ID)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Customers.FirstOrDefault(u => u.ID == ID);
             }
         }
 
@@ -154,7 +179,6 @@ namespace GLMainProject
                     })
                     .ToList();
             }
-
         }
 
         public static void AddUser(User user)

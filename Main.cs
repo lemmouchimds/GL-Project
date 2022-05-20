@@ -33,8 +33,12 @@ namespace GLMainProject
 
         private void clientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var client = new AgentDeVente.ClientUI();
-            //client.Parent = this;
+            var client = new AgentDeVente.ClientUI()
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+
             client.Show();
         }
 

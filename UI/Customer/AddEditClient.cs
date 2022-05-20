@@ -9,17 +9,22 @@ namespace GLMainProject.AgentDeVente
         {
             InitializeComponent();
         }
+        public Customer CurrentCust { get; set; }
 
 
         //private void bnAjouter_Click(object sender, EventArgs e)
         //{
         //}
 
-        public Customer Customer { get; set; }
+        //public Customer Customer { get; set; }
 
         private void AddEditClient_Load(object sender, EventArgs e)
         {
-
+            tbDesignation.DataBindings.Add("Text", CurrentCust, "Designation");
+            tbEmail.DataBindings.Add("Text", CurrentCust, "Email");
+            tbAdress.DataBindings.Add("Text", CurrentCust, "Adress");
+            tbResponsable.DataBindings.Add("Text", CurrentCust, "Responsable");
+            cbRevenduer.DataBindings.Add("Checked", CurrentCust, "IsRevendeur");
         }
 
         private int errorCount;
@@ -60,16 +65,16 @@ namespace GLMainProject.AgentDeVente
                 return;
             }
 
-            var result = new Customer
-            {
-                Designation = tbDesignation.Text,
-                Adress = tbAdress.Text,
-                Email = tbEmail.Text,
-                Responsable = tbResponsable.Text,
-                IsRevendeur = cbRevenduer.Checked
-            };
+            //var result = new Customer
+            //{
+            //    Designation = tbDesignation.Text,
+            //    Adress = tbAdress.Text,
+            //    Email = tbEmail.Text,
+            //    Responsable = tbResponsable.Text,
+            //    IsRevendeur = cbRevenduer.Checked
+            //};
 
-            Controller.AddClient(result);
+            //Controller.AddClient(result);
         }
     }
 }

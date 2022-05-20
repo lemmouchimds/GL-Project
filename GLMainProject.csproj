@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Consts.cs" />
+    <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Main\AddUser.cs">
       <SubType>Form</SubType>
