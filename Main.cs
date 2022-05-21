@@ -75,7 +75,13 @@ namespace GLMainProject
 
         private void documentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var document = new UI.Docs.DocsUI()
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
 
+            document.Show();
         }
 
         private void vueAllToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,11 +1,6 @@
 ﻿using GLMainProject.Dto;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GLMainProject
 {
@@ -57,6 +52,22 @@ namespace GLMainProject
             {
                 return db.Customers.FirstOrDefault(u => u.ID == ID);
             }
+        }
+
+        public static List<CustomerNamesOnly> GetCustomerNames()
+        {
+            var result = new List<CustomerNamesOnly>();
+
+            using( var db = new GLprojectDBcontext())
+            {
+                foreach(var customer in db.Customers)
+                {
+                    result.Add(new CustomerNamesOnly { ID = customer.ID
+                        , Name = customer.Designation });
+                }
+            }
+
+            return result;
         }
 
         public static bool EditClient(Customer customer)
@@ -307,6 +318,33 @@ namespace GLMainProject
                 db.SaveChanges();
                 return true;
             }
+        }
+
+        public static List<DocsDto> ListAllDocs()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Documents.ToList()
+                    .Select(u => new DocsDto
+                    {
+                        ID = u.ID,
+                        Reference = u.Reference,
+                        CustomerNamesOnly = new CustomerNamesOnly { ID = u.CustomerID, 
+                            Name = u.Customer.Designation },
+                        Date = u.Date,
+                        PayementDate = u.PaymentDate,
+                        Payed = u.Payed.ToString()
+                    })
+                    .ToList();
+            }
+        }
+        public static Document GetDocById(int ID)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Documents.FirstOrDefault(u => u.ID == ID);
+            }
+
         }
         #endregion
     }

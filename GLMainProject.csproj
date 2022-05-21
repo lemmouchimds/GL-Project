@@ -113,6 +113,9 @@
   <ItemGroup>
     <Compile Include="Controllers\Consts.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
+    <Compile Include="Dto\CustomerNamesOnly.cs" />
+    <Compile Include="Dto\DocsDetailDto.cs" />
+    <Compile Include="Dto\DocsDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Main\AddUser.cs">
       <SubType>Form</SubType>
@@ -159,6 +162,18 @@
     </Compile>
     <Compile Include="UI\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Docs\AddDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Docs\AddDoc.Designer.cs">
+      <DependentUpon>AddDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Docs\DocsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Docs\DocsUI.Designer.cs">
+      <DependentUpon>DocsUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\StockUI.cs">
       <SubType>Form</SubType>
@@ -233,6 +248,12 @@
     <EmbeddedResource Include="UI\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Docs\AddDoc.resx">
+      <DependentUpon>AddDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Docs\DocsUI.resx">
+      <DependentUpon>DocsUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\StockUI.resx">
       <DependentUpon>StockUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,7 +301,9 @@
   <ItemGroup>
     <Content Include="milk-carton.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UI\Stock\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
