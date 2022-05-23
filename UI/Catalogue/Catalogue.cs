@@ -17,33 +17,53 @@ namespace GLMainProject
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    //var add = new AgentDeVente.AddToCatalogue();
+        //}
+
+        //private void bnAdd_Click(object sender, EventArgs e)
+        //{
+        //    var add = new AgentDeVente.AddCatalogue();
+        //    add.Product = new Product();
+        //    add.ShowDialog();
+        //}
+
+        private void Catalogue_Load(object sender, EventArgs e)
         {
-            //var add = new AgentDeVente.AddToCatalogue();
+
         }
 
         private void bnAdd_Click(object sender, EventArgs e)
         {
-            var add = new AgentDeVente.AddToCatalogue();
-            add.Product = new Product();
-            add.ShowDialog();
-        }
 
-        private void Catalogue_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void refreshGrid()
-        {
-            //dataGridViewCatalogue.DataSource = Controller;
         }
 
         private void bnEdit_Click(object sender, EventArgs e)
         {
-            var edit = new AgentDeVente.AddToCatalogue();
-            //add.Product = new Product();
-            edit.ShowDialog();
+
         }
+
+        private void bnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bnSearsh_Click(object sender, EventArgs e)
+        {
+             
+        }
+
+        //private void refreshGrid()
+        //{
+        //    //dataGridViewCatalogue.DataSource = Controller;
+        //}
+
+        //private void bnEdit_Click(object sender, EventArgs e)
+        //{
+        //    var edit = new AgentDeVente.AddCatalogue();
+        //    //add.Product = new Product();
+        //    edit.ShowDialog();
+        //}
     }
 }

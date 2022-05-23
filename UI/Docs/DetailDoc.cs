@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GLMainProject.UI
+namespace GLMainProject.UI.Docs
 {
-    public partial class UserUI : Form
+    public partial class DetailDoc : Form
     {
-        public UserUI()
+        public DetailDoc()
         {
             InitializeComponent();
         }

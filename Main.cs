@@ -69,8 +69,13 @@ namespace GLMainProject
 
         private void catalogueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var cata = new Catalogue();
-            cata.Show();
+            var document = new Catalogue()
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+
+            document.Show();
         }
 
         private void documentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +98,16 @@ namespace GLMainProject
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new UserList()
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            form.Show();
+        }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AgentDeVente.StockUI()
             {
                 MdiParent = this,
                 WindowState = FormWindowState.Maximized

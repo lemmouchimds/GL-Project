@@ -28,5 +28,10 @@ namespace GLMainProject.UI.Docs
 
             cbCust.Items.AddRange(Controller.GetCustomerNames().ToArray());
         }
+
+        private void bnOK_Click(object sender, EventArgs e)
+        {
+            ValidateChildren();
+        }
     }
 }

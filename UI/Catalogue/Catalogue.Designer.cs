@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dataGridViewCatalogue = new System.Windows.Forms.DataGridView();
-            this.bnEdit = new System.Windows.Forms.Button();
-            this.bnDelete = new System.Windows.Forms.Button();
-            this.bnAdd = new System.Windows.Forms.Button();
             this.tbSearsh = new System.Windows.Forms.TextBox();
             this.bnSearsh = new System.Windows.Forms.Button();
+            this.bnDelete = new System.Windows.Forms.Button();
+            this.bnEdit = new System.Windows.Forms.Button();
+            this.bnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalogue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,44 +43,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCatalogue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCatalogue.Location = new System.Drawing.Point(12, 74);
+            this.dataGridViewCatalogue.Location = new System.Drawing.Point(-3, 74);
             this.dataGridViewCatalogue.Name = "dataGridViewCatalogue";
             this.dataGridViewCatalogue.RowHeadersWidth = 62;
             this.dataGridViewCatalogue.RowTemplate.Height = 28;
-            this.dataGridViewCatalogue.Size = new System.Drawing.Size(872, 425);
+            this.dataGridViewCatalogue.Size = new System.Drawing.Size(901, 440);
             this.dataGridViewCatalogue.TabIndex = 1;
-            // 
-            // bnEdit
-            // 
-            this.bnEdit.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.bnEdit.Location = new System.Drawing.Point(85, 12);
-            this.bnEdit.Name = "bnEdit";
-            this.bnEdit.Size = new System.Drawing.Size(67, 56);
-            this.bnEdit.TabIndex = 8;
-            this.bnEdit.Text = "!";
-            this.bnEdit.UseVisualStyleBackColor = true;
-            this.bnEdit.Click += new System.EventHandler(this.bnEdit_Click);
-            // 
-            // bnDelete
-            // 
-            this.bnDelete.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.bnDelete.Location = new System.Drawing.Point(158, 12);
-            this.bnDelete.Name = "bnDelete";
-            this.bnDelete.Size = new System.Drawing.Size(67, 56);
-            this.bnDelete.TabIndex = 7;
-            this.bnDelete.Text = "Ö";
-            this.bnDelete.UseVisualStyleBackColor = true;
-            // 
-            // bnAdd
-            // 
-            this.bnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnAdd.Location = new System.Drawing.Point(12, 12);
-            this.bnAdd.Name = "bnAdd";
-            this.bnAdd.Size = new System.Drawing.Size(67, 56);
-            this.bnAdd.TabIndex = 6;
-            this.bnAdd.Text = "+";
-            this.bnAdd.UseVisualStyleBackColor = true;
-            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
             // tbSearsh
             // 
@@ -93,6 +61,7 @@
             // 
             // bnSearsh
             // 
+            this.bnSearsh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bnSearsh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnSearsh.Location = new System.Drawing.Point(830, 12);
             this.bnSearsh.Name = "bnSearsh";
@@ -100,6 +69,40 @@
             this.bnSearsh.TabIndex = 18;
             this.bnSearsh.Text = "🔍";
             this.bnSearsh.UseVisualStyleBackColor = true;
+            this.bnSearsh.Click += new System.EventHandler(this.bnSearsh_Click);
+            // 
+            // bnDelete
+            // 
+            this.bnDelete.Location = new System.Drawing.Point(256, 21);
+            this.bnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bnDelete.Name = "bnDelete";
+            this.bnDelete.Size = new System.Drawing.Size(112, 35);
+            this.bnDelete.TabIndex = 23;
+            this.bnDelete.Text = "Supprimer";
+            this.bnDelete.UseVisualStyleBackColor = true;
+            this.bnDelete.Click += new System.EventHandler(this.bnDelete_Click);
+            // 
+            // bnEdit
+            // 
+            this.bnEdit.Location = new System.Drawing.Point(135, 21);
+            this.bnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bnEdit.Name = "bnEdit";
+            this.bnEdit.Size = new System.Drawing.Size(112, 35);
+            this.bnEdit.TabIndex = 24;
+            this.bnEdit.Text = "Modifier";
+            this.bnEdit.UseVisualStyleBackColor = true;
+            this.bnEdit.Click += new System.EventHandler(this.bnEdit_Click);
+            // 
+            // bnAdd
+            // 
+            this.bnAdd.Location = new System.Drawing.Point(13, 21);
+            this.bnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bnAdd.Name = "bnAdd";
+            this.bnAdd.Size = new System.Drawing.Size(112, 35);
+            this.bnAdd.TabIndex = 25;
+            this.bnAdd.Text = "Ajouter";
+            this.bnAdd.UseVisualStyleBackColor = true;
+            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
             // Catalogue
             // 
@@ -107,11 +110,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(896, 511);
+            this.Controls.Add(this.bnDelete);
+            this.Controls.Add(this.bnEdit);
+            this.Controls.Add(this.bnAdd);
             this.Controls.Add(this.bnSearsh);
             this.Controls.Add(this.tbSearsh);
-            this.Controls.Add(this.bnEdit);
-            this.Controls.Add(this.bnDelete);
-            this.Controls.Add(this.bnAdd);
             this.Controls.Add(this.dataGridViewCatalogue);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(670, 459);
@@ -126,10 +129,10 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridViewCatalogue;
-        private System.Windows.Forms.Button bnEdit;
-        private System.Windows.Forms.Button bnDelete;
-        private System.Windows.Forms.Button bnAdd;
         private System.Windows.Forms.TextBox tbSearsh;
         private System.Windows.Forms.Button bnSearsh;
+        private System.Windows.Forms.Button bnDelete;
+        private System.Windows.Forms.Button bnEdit;
+        private System.Windows.Forms.Button bnAdd;
     }
 }

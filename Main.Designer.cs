@@ -34,6 +34,7 @@
             this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,53 +46,59 @@
             this.usersToolStripMenuItem,
             this.clientToolStripMenuItem,
             this.catalogueToolStripMenuItem,
-            this.documentToolStripMenuItem});
+            this.documentToolStripMenuItem,
+            this.stockToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(675, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
             this.usersToolStripMenuItem.Text = "Utilisateurs";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // clientToolStripMenuItem
             // 
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            this.clientToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
             this.clientToolStripMenuItem.Text = "&Client";
             this.clientToolStripMenuItem.Click += new System.EventHandler(this.clientToolStripMenuItem_Click);
             // 
             // catalogueToolStripMenuItem
             // 
             this.catalogueToolStripMenuItem.Name = "catalogueToolStripMenuItem";
-            this.catalogueToolStripMenuItem.Size = new System.Drawing.Size(73, 22);
+            this.catalogueToolStripMenuItem.Size = new System.Drawing.Size(108, 29);
             this.catalogueToolStripMenuItem.Text = "Ca&talogue";
             this.catalogueToolStripMenuItem.Click += new System.EventHandler(this.catalogueToolStripMenuItem_Click);
             // 
             // documentToolStripMenuItem
             // 
             this.documentToolStripMenuItem.Name = "documentToolStripMenuItem";
-            this.documentToolStripMenuItem.Size = new System.Drawing.Size(75, 22);
+            this.documentToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
             this.documentToolStripMenuItem.Text = "&Document";
             this.documentToolStripMenuItem.Click += new System.EventHandler(this.documentToolStripMenuItem_Click);
             // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(71, 29);
+            this.stockToolStripMenuItem.Text = "&Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(675, 380);
+            this.ClientSize = new System.Drawing.Size(1012, 585);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Milk Production Management";
@@ -111,6 +118,7 @@
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem catalogueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
     }
 }
 

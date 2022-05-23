@@ -163,11 +163,23 @@
     <Compile Include="UI\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Docs\AddDetailDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Docs\AddDetailDoc.Designer.cs">
+      <DependentUpon>AddDetailDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Docs\AddDoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Docs\AddDoc.Designer.cs">
       <DependentUpon>AddDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Docs\DetailDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Docs\DetailDoc.Designer.cs">
+      <DependentUpon>DetailDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Docs\DocsUI.cs">
       <SubType>Form</SubType>
@@ -175,10 +187,10 @@
     <Compile Include="UI\Docs\DocsUI.Designer.cs">
       <DependentUpon>DocsUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\StockUI.cs">
+    <Compile Include="UI\Stock\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\StockUI.Designer.cs">
+    <Compile Include="UI\Stock\StockUI.Designer.cs">
       <DependentUpon>StockUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Authentification.cs">
@@ -212,12 +224,6 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserType.cs" />
     <Compile Include="Test.cs" />
-    <Compile Include="UI\UserUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\UserUI.Designer.cs">
-      <DependentUpon>UserUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\User\UserList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,13 +254,19 @@
     <EmbeddedResource Include="UI\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Docs\AddDetailDoc.resx">
+      <DependentUpon>AddDetailDoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Docs\AddDoc.resx">
       <DependentUpon>AddDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Docs\DetailDoc.resx">
+      <DependentUpon>DetailDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Docs\DocsUI.resx">
       <DependentUpon>DocsUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\StockUI.resx">
+    <EmbeddedResource Include="UI\Stock\StockUI.resx">
       <DependentUpon>StockUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Authentification.resx">
@@ -275,9 +287,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\UserUI.resx">
-      <DependentUpon>UserUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\User\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,9 +310,7 @@
   <ItemGroup>
     <Content Include="milk-carton.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\Stock\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

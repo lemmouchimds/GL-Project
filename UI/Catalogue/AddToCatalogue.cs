@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GLMainProject.AgentDeVente
 {
-    public partial class AddToCatalogue : Form
+    public partial class AddCatalogue : Form
     {
-        public AddToCatalogue()
+        public AddCatalogue()
         {
             InitializeComponent();
         }

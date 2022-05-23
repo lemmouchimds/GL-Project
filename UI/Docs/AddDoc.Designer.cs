@@ -143,6 +143,7 @@
             this.bnOK.TabIndex = 11;
             this.bnOK.Text = "OK";
             this.bnOK.UseVisualStyleBackColor = true;
+            this.bnOK.Click += new System.EventHandler(this.bnOK_Click);
             // 
             // bnCancel
             // 
