@@ -94,6 +94,7 @@
             this.Name = "StockUI";
             this.ShowIcon = false;
             this.Text = "Stock";
+            this.Load += new System.EventHandler(this.StockUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             this.ResumeLayout(false);
 

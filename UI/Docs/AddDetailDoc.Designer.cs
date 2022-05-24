@@ -91,6 +91,7 @@
             // bnCancel
             // 
             this.bnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bnCancel.Location = new System.Drawing.Point(359, 181);
             this.bnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bnCancel.Name = "bnCancel";
@@ -102,6 +103,7 @@
             // bnOK
             // 
             this.bnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.bnOK.Location = new System.Drawing.Point(238, 181);
             this.bnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bnOK.Name = "bnOK";
@@ -133,6 +135,7 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Detail Document";
+            this.Load += new System.EventHandler(this.AddDetailDoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

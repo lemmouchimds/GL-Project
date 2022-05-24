@@ -21,7 +21,7 @@ namespace GLMainProject.UI.Docs
         {
             using (var newDocs = new AddDoc()
             {
-                CurrentDoc = new Document()
+                CurrentDoc = new Document() { Date = DateTime.Now, PaymentDate = DateTime.Now }
             })
             {
                 if (newDocs.ShowDialog() == DialogResult.OK)

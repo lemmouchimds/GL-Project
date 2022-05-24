@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GLMainProject.AgentDeVente
@@ -19,39 +12,44 @@ namespace GLMainProject.AgentDeVente
 
         private void bnAdd_Click(object sender, EventArgs e)
         {
-            using (var newProduct = new AgentDeVente.AddCatalogue()
+            using (var newProduct = new UI.Stock.AddStock() 
             {
-                CurrentProduct = new Product()
+                CurrentInventory = new Inventory() { DatePeremption = DateTime.Now, DateProduction = DateTime.Now }
             })
             {
-                if (newProduct.ShowDialog() == DialogResult.OK)
+                if (newProduct.ShowDialog() == DialogResult.OK) //todo: there's a problem here, i can't add
                 {
-                    Controller.AddProduit(newProduct.CurrentProduct);
+                    Controller.AddStock(newProduct.CurrentInventory);
                     refreshGrid();
                 }
             }
         }
 
+        private void refreshGrid()
+        {
+            dataGridViewStock.DataSource = Controller.ListAllInventories();
+        }
+
         private void bnEdit_Click(object sender, EventArgs e)
         {
-            if (dataGridViewCatalogue.SelectedRows.Count <= 0)
+            if (dataGridViewStock.SelectedRows.Count <= 0)
                 return;
-            var currentProduct = dataGridViewCatalogue.SelectedRows[0].DataBoundItem as Dto.ProductDto;
-            if (currentProduct == null)
-                return;
-
-            var cust = Controller.GetProductById(currentProduct.ID);
-            if (cust == null)
+            var currentInventory = dataGridViewStock.SelectedRows[0].DataBoundItem as Dto.StockDto;
+            if (currentInventory == null)
                 return;
 
-            using (var newProduct = new AgentDeVente.AddCatalogue()
+            var prod = Controller.GetStockById(currentInventory.ID);
+            if (prod == null)
+                return;
+
+            using (var newInventory = new UI.Stock.AddStock()
             {
-                CurrentProduct = cust
+                CurrentInventory = prod
             })
             {
-                if (newProduct.ShowDialog() == DialogResult.OK)
+                if (newInventory.ShowDialog() == DialogResult.OK)
                 {
-                    Controller.EditProduct(newProduct.CurrentProduct);
+                    Controller.EditInventory(newInventory.CurrentInventory);
                     refreshGrid();
                 }
             }
@@ -61,19 +59,27 @@ namespace GLMainProject.AgentDeVente
         {
             if (!IsOneSelected())
                 return;
-            var currentProduct = dataGridViewCatalogue.SelectedRows[0].DataBoundItem as Dto.ProductDto;
+            var currentProduct = dataGridViewStock.SelectedRows[0].DataBoundItem as Dto.StockDto;
             if (currentProduct == null)
                 return;
 
-            var dialogResult = MessageBox.Show($"Voulez-vous vraiment supprimer le produit '{currentProduct.Designation}'?", "Attention!"
+            var dialogResult = MessageBox.Show($"Voulez-vous vraiment supprimer le produit '{currentProduct.Product}' ?", "Attention!"
                 , MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            if (dialogResult == DialogResult.Yes && Controller.DeleteProduit(currentProduct.ID))
+            if (dialogResult == DialogResult.Yes && Controller.DeleteInventory(currentProduct.ID))
             {
                 refreshGrid();
             }
         }
 
-        
+        private bool IsOneSelected()
+        {
+            return dataGridViewStock.SelectedCells.Count <= 0 || dataGridViewStock.SelectedCells.Count > 1;
+        }
+
+        private void StockUI_Load(object sender, EventArgs e)
+        {
+            refreshGrid();
+        }
     }
 }

@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDetailDoc = new System.Windows.Forms.DataGridView();
             this.bnDelete = new System.Windows.Forms.Button();
             this.bnEdit = new System.Windows.Forms.Button();
             this.bnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailDoc)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewDetailDoc
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewDetailDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(836, 533);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewDetailDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDetailDoc.Location = new System.Drawing.Point(0, 70);
+            this.dataGridViewDetailDoc.Name = "dataGridViewDetailDoc";
+            this.dataGridViewDetailDoc.RowHeadersWidth = 62;
+            this.dataGridViewDetailDoc.RowTemplate.Height = 28;
+            this.dataGridViewDetailDoc.Size = new System.Drawing.Size(836, 533);
+            this.dataGridViewDetailDoc.TabIndex = 0;
             // 
             // bnDelete
             // 
@@ -57,6 +57,7 @@
             this.bnDelete.TabIndex = 23;
             this.bnDelete.Text = "Supprimer";
             this.bnDelete.UseVisualStyleBackColor = true;
+            this.bnDelete.Click += new System.EventHandler(this.bnDelete_Click);
             // 
             // bnEdit
             // 
@@ -67,6 +68,7 @@
             this.bnEdit.TabIndex = 24;
             this.bnEdit.Text = "Modifier";
             this.bnEdit.UseVisualStyleBackColor = true;
+            this.bnEdit.Click += new System.EventHandler(this.bnEdit_Click);
             // 
             // bnAdd
             // 
@@ -77,6 +79,7 @@
             this.bnAdd.TabIndex = 25;
             this.bnAdd.Text = "Ajouter";
             this.bnAdd.UseVisualStyleBackColor = true;
+            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
             // DetailDoc
             // 
@@ -86,21 +89,22 @@
             this.Controls.Add(this.bnDelete);
             this.Controls.Add(this.bnEdit);
             this.Controls.Add(this.bnAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDetailDoc);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(616, 562);
             this.Name = "DetailDoc";
             this.ShowIcon = false;
             this.Text = "Detail Document";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.DetailDoc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailDoc)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDetailDoc;
         private System.Windows.Forms.Button bnDelete;
         private System.Windows.Forms.Button bnEdit;
         private System.Windows.Forms.Button bnAdd;

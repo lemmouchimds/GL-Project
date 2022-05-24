@@ -137,6 +137,7 @@
             // bnOK
             // 
             this.bnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.bnOK.Location = new System.Drawing.Point(241, 346);
             this.bnOK.Name = "bnOK";
             this.bnOK.Size = new System.Drawing.Size(101, 35);

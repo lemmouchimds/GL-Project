@@ -22,8 +22,8 @@ namespace GLMainProject.UI.Docs
         private void AddDoc_Load(object sender, EventArgs e)
         {
             tbRef.DataBindings.Add("text", CurrentDoc, "Reference");
-            dtDate.DataBindings.Add("date", CurrentDoc, "Date");
-            dtPayment.DataBindings.Add("date", CurrentDoc, "PaymentDate");
+            dtDate.DataBindings.Add("value", CurrentDoc, "Date");
+            dtPayment.DataBindings.Add("value", CurrentDoc, "PaymentDate");
             
 
             cbCust.Items.AddRange(Controller.GetCustomerNames().ToArray());

@@ -54,16 +54,15 @@ namespace GLMainProject
             }
         }
 
-        public static List<CustomerNamesOnly> GetCustomerNames()
+        public static List<string> GetCustomerNames()
         {
-            var result = new List<CustomerNamesOnly>();
+            var result = new List<string>();
 
             using( var db = new GLprojectDBcontext())
             {
                 foreach(var customer in db.Customers)
                 {
-                    result.Add(new CustomerNamesOnly { ID = customer.ID
-                        , Name = customer.Designation });
+                    result.Add($"{customer.ID} - {customer.Designation}");
                 }
             }
 
@@ -391,7 +390,7 @@ namespace GLMainProject
                 }
             }
         }
-        public static List<DocsDetailDto> ListAllDetailDocs()
+        public static List<DocsDetailDto> ListAllDetailDocs(int DocumentID)
         {
             using (var db = new GLprojectDBcontext())
             {
@@ -403,8 +402,8 @@ namespace GLMainProject
                         Quantity = u.Quantity,
                         UnitPrice = u.UnitPrice,
                         Label = u.Label
-                    })
-                    .ToList();
+                    }).Where(a => a.ID == DocumentID).ToList(); //todo: where the detail docs are in the document
+                    
             }
         }
         public static void AddDocDetail(DocumentDetail documentDetail)
@@ -455,6 +454,109 @@ namespace GLMainProject
                 return true;
             }
         }
+
+        public static List<string> InventoryNameID()
+        {
+            var result = new List<string>();
+
+            foreach (var item in ListAllInventories())
+            {
+                result.Add($"{item.ID} - {GetProductById(item.ID).Designation} " +
+                    $"- date:{item.DateProduction} to {item.DatePeremption}");
+            }
+
+            return result;
+        }
+        #endregion
+
+        #region Inventory
+        public static List<Inventory> Inventory
+        {
+            get
+            {
+                using (var db = new GLprojectDBcontext())
+                {
+                    return db.Inventory.ToList();
+                }
+            }
+        }
+        public static List<StockDto> ListAllInventories()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Inventory.ToList()
+                    .Select(u => new StockDto
+                    {
+                        ID = u.ID,
+                        Product = $"{u.ProductID} - {u.Product.Designation}",
+                        Quantitie = u.InStock,
+                        DateProduction = u.DateProduction.ToShortDateString(),
+                        DatePeremption = u.DatePeremption.ToShortDateString()
+                    })
+                    .ToList();
+            }
+        }
+        public static void AddStock(Inventory inventory)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                db.Inventory.Add(inventory);
+                db.SaveChanges();
+            }
+        }
+        public static Inventory GetStockById(int id)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Inventory.FirstOrDefault(u => u.ID == id);
+            }
+
+        }
+        public static void EditInventory(Inventory inventory)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                var newInventoryInfos = db.Inventory.FirstOrDefault(use => use.ID == inventory.ID);
+                if (newInventoryInfos != null)
+                {
+                    newInventoryInfos.Product = inventory.Product;
+                    newInventoryInfos.DateProduction = inventory.DateProduction;
+                    newInventoryInfos.DatePeremption = inventory.DatePeremption;
+                    newInventoryInfos.InStock = inventory.InStock;
+
+                    db.SaveChanges();
+                }
+            }
+        }
+        public static bool DeleteInventory(int id)
+        {
+
+            using (var db = new GLprojectDBcontext())
+            {
+                var inventory = db.Inventory.FirstOrDefault(c => c.ID == id);
+                if (inventory == null)
+                {
+                    return false;
+                }
+
+                db.Inventory.Remove(inventory);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public static List<string> ProductNamesID()
+        {
+            var result = new List<string>();
+
+            foreach(var item in ListAllProducts())
+            {
+                result.Add($"{item.ID} - {item.Designation}");
+            }
+
+            return result;
+        }
+
         #endregion
     }
 

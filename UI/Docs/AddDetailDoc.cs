@@ -16,5 +16,14 @@ namespace GLMainProject.UI.Docs
         {
             InitializeComponent();
         }
+
+        public DocumentDetail CurrentDocDetail;
+        private void AddDetailDoc_Load(object sender, EventArgs e)
+        {
+            tbLabel.DataBindings.Add("Text", CurrentDocDetail, "Label");
+            nupQuantity.DataBindings.Add("Text", CurrentDocDetail, "Quantity");
+
+            cbProduct.Items.AddRange(Controller.InventoryNameID().ToArray());
+        }
     }
 }

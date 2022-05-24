@@ -189,6 +189,12 @@
     <Compile Include="UI\Docs\DocsUI.Designer.cs">
       <DependentUpon>DocsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Stock\AddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Stock\AddStock.Designer.cs">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Stock\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,12 +214,6 @@
       <DependentUpon>Catalogue.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Directeur\DirecteurUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Directeur\DirecteurUI.Designer.cs">
-      <DependentUpon>DirecteurUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\GLprojectDBcontext.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -268,14 +268,14 @@
     <EmbeddedResource Include="UI\Docs\DocsUI.resx">
       <DependentUpon>DocsUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Stock\AddStock.resx">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Stock\StockUI.resx">
       <DependentUpon>StockUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Directeur\DirecteurUI.resx">
-      <DependentUpon>DirecteurUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
