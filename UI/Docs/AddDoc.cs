@@ -11,6 +11,7 @@ namespace GLMainProject.UI.Docs
         }
 
         public Document CurrentDoc { get; set; }
+        public int CurrentDocID { get; set; }
 
         private void AddDoc_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,7 @@ namespace GLMainProject.UI.Docs
 
         private void refreshGrid()
         {
-            dataGridViewDetailDoc.DataSource = CurrentDoc.DocumentDetails;
+            dataGridViewDetailDoc.DataSource = Controller.ListAllDetailDocs(CurrentDoc.ID);
         }
 
         private void bnEdit_Click(object sender, EventArgs e)

@@ -33,6 +33,7 @@
             this.bnAdd = new System.Windows.Forms.Button();
             this.dataGridViewDocs = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Referance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +81,7 @@
             this.dataGridViewDocs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDocs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Referance,
             this.Customer,
             this.Date,
             this.PaymentDate});
@@ -98,9 +100,17 @@
             this.ID.Name = "ID";
             this.ID.Width = 150;
             // 
+            // Referance
+            // 
+            this.Referance.DataPropertyName = "Reference";
+            this.Referance.HeaderText = "Reference";
+            this.Referance.MinimumWidth = 8;
+            this.Referance.Name = "Referance";
+            this.Referance.Width = 150;
+            // 
             // Customer
             // 
-            this.Customer.DataPropertyName = "CustomerNamesOnly.Name";
+            this.Customer.DataPropertyName = "CustIdName";
             this.Customer.HeaderText = "Client";
             this.Customer.MinimumWidth = 8;
             this.Customer.Name = "Customer";
@@ -116,7 +126,7 @@
             // 
             // PaymentDate
             // 
-            this.PaymentDate.DataPropertyName = "PaymentDate";
+            this.PaymentDate.DataPropertyName = "PayementDate";
             this.PaymentDate.HeaderText = "Date de paiment";
             this.PaymentDate.MinimumWidth = 8;
             this.PaymentDate.Name = "PaymentDate";
@@ -147,6 +157,7 @@
         private System.Windows.Forms.Button bnAdd;
         private System.Windows.Forms.DataGridView dataGridViewDocs;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Referance;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;

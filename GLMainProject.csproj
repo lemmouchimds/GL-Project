@@ -125,9 +125,9 @@
     <Compile Include="Main\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205242105502_init.cs" />
-    <Compile Include="Migrations\202205242105502_init.designer.cs">
-      <DependentUpon>202205242105502_init.cs</DependentUpon>
+    <Compile Include="Migrations\202205242216555_init.cs" />
+    <Compile Include="Migrations\202205242216555_init.designer.cs">
+      <DependentUpon>202205242216555_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UI\Customer\AddEditClient.cs">
@@ -176,12 +176,6 @@
     </Compile>
     <Compile Include="UI\Docs\AddDoc.Designer.cs">
       <DependentUpon>AddDoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Docs\DetailDoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Docs\DetailDoc.Designer.cs">
-      <DependentUpon>DetailDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Docs\DocsUI.cs">
       <SubType>Form</SubType>
@@ -235,8 +229,8 @@
     <EmbeddedResource Include="Main\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205242105502_init.resx">
-      <DependentUpon>202205242105502_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205242216555_init.resx">
+      <DependentUpon>202205242216555_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Customer\AddEditClient.resx">
       <DependentUpon>AddEditClient.cs</DependentUpon>
@@ -261,9 +255,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Docs\AddDoc.resx">
       <DependentUpon>AddDoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Docs\DetailDoc.resx">
-      <DependentUpon>DetailDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Docs\DocsUI.resx">
       <DependentUpon>DocsUI.cs</DependentUpon>
