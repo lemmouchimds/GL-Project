@@ -360,8 +360,7 @@ namespace GLMainProject
                     {
                         ID = u.ID,
                         Reference = u.Reference,
-                        CustomerNamesOnly = new CustomerNamesOnly { ID = u.CustomerID, 
-                            Name = u.Customer.Designation },
+                        CustIdName = $"{u.ID} - {u.Customer.Designation}",
                         Date = u.Date,
                         PayementDate = u.PaymentDate,
                         Payed = u.Payed.ToString()
@@ -394,7 +393,7 @@ namespace GLMainProject
         {
             using (var db = new GLprojectDBcontext())
             {
-                return db.DocumentDetails.ToList()
+                return db.DocumentDetails.Where(a => a.DocumentID == DocumentID).ToList()
                     .Select(u => new DocsDetailDto
                     {
                         ID = u.ID,
@@ -402,8 +401,7 @@ namespace GLMainProject
                         Quantity = u.Quantity,
                         UnitPrice = u.UnitPrice,
                         Label = u.Label
-                    }).Where(a => a.ID == DocumentID).ToList(); //todo: where the detail docs are in the document
-                    
+                    }).ToList();
             }
         }
         public static void AddDocDetail(DocumentDetail documentDetail)

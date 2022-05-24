@@ -99,6 +99,7 @@
             // 
             // ID
             // 
+            this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 8;
             this.ID.Name = "ID";

@@ -15,7 +15,6 @@ namespace GLMainProject.Dto
 
         public int ID { get; set; }
         public string Reference { get; set; }
-        public CustomerNamesOnly CustomerNamesOnly { get; set; }
         public string CustIdName { get; set; }
         public DateTime Date { get; set; }
         public DateTime PayementDate { get; set; }
