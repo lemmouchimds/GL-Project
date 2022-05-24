@@ -212,6 +212,7 @@
             this.ShowIcon = false;
             this.Text = "Catalogue";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddToCatalogue_FormClosing);
+            this.Load += new System.EventHandler(this.AddCatalogue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

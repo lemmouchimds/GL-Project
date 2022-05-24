@@ -116,6 +116,8 @@
     <Compile Include="Dto\CustomerNamesOnly.cs" />
     <Compile Include="Dto\DocsDetailDto.cs" />
     <Compile Include="Dto\DocsDto.cs" />
+    <Compile Include="Dto\ProductDto.cs" />
+    <Compile Include="Dto\StockDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Main\AddUser.cs">
       <SubType>Form</SubType>

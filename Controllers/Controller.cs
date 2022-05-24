@@ -121,7 +121,6 @@ namespace GLMainProject
                 }
             }
         }
-
         public static void AddProduit(Product produit)
         {
             using(var db = new GLprojectDBcontext())
@@ -130,22 +129,24 @@ namespace GLMainProject
                 db.SaveChanges();
             }
         }
-
-        public static void EditProduct(int id)
+        public static void EditProduct(Product product)
         {
             using (var db = new GLprojectDBcontext())
             {
-                var newProInfos = db.Products.FirstOrDefault(pro => pro.ID == id);
-                if (newProInfos != null)
+                var newProductInfos = db.Products.FirstOrDefault(use => use.ID == product.ID);
+                if (newProductInfos != null)
                 {
-                    //newProInfos.Referance = 
+                    newProductInfos.Referance = product.Referance;
+                    newProductInfos.Designation = product.Designation;
+                    newProductInfos.ValNutritionnelle = product.ValNutritionnelle;
+                    newProductInfos.PoidsNet = product.PoidsNet;
+                    newProductInfos.CoutRevient = product.CoutRevient;
+                    newProductInfos.GainSouaite = product.GainSouaite;
 
                     db.SaveChanges();
                 }
             }
         }
-
-
         public static bool DeleteProduit(int id)
         {
 
@@ -162,6 +163,43 @@ namespace GLMainProject
                 return true;
             }
         }
+        public static List<ProductDto> ListAllProducts()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Products.ToList()
+                    .Select(u => new ProductDto
+                    {
+                        ID = u.ID,
+                        Referance = u.Referance,
+                        Designation = u.Designation,
+                        ValNutritionnelle = u.ValNutritionnelle,
+                        PoidsNet = u.PoidsNet,
+                        CoutRevient = u.CoutRevient,
+                        GainSouaite = u.GainSouaite
+                    })
+                    .ToList();
+            }
+        }
+        public static Product GetProductById(int id)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Products.FirstOrDefault(u => u.ID == id);
+            }
+
+        }
+        public static List<ProductDto> Search(string keyWord)
+        {
+            var list = ListAllProducts();
+            var q = from e in list
+                    where   e.Designation.Contains(keyWord) || 
+                            e.Referance.Contains(keyWord)
+                    select e;
+
+            return q.ToList();
+        }
+
         #endregion
 
         #region user
@@ -176,7 +214,6 @@ namespace GLMainProject
                 }
             }
         }
-
         public static List<UserDto> ListAllUsers()
         {
             using (var db = new GLprojectDBcontext())
@@ -191,7 +228,6 @@ namespace GLMainProject
                     .ToList();
             }
         }
-
         public static void AddUser(User user)
         {
             using (var db = new GLprojectDBcontext())
@@ -200,7 +236,7 @@ namespace GLMainProject
                 db.SaveChanges();
             }
         }
-        internal static User GetUserById(int id)
+        public static User GetUserById(int id)
         {
             using (var db = new GLprojectDBcontext())
             {
@@ -208,8 +244,6 @@ namespace GLMainProject
             }
 
         }
-
-
         public static void EditUser(User user)
         {
             using (var db = new GLprojectDBcontext())
@@ -225,7 +259,6 @@ namespace GLMainProject
                 }
             }
         }
-
         public static User UserExist(string username)
         {
             using (var db = new GLprojectDBcontext())
@@ -239,7 +272,6 @@ namespace GLMainProject
                 return null;
             }
         }
-
         public static bool DeleteUser(int id)
         {
 
@@ -345,6 +377,83 @@ namespace GLMainProject
                 return db.Documents.FirstOrDefault(u => u.ID == ID);
             }
 
+        }
+        #endregion
+
+        #region DetailDoc
+        public static List<DocumentDetail> DetailDocs
+        {
+            get
+            {
+                using (var db = new GLprojectDBcontext())
+                {
+                    return db.DocumentDetails.ToList();
+                }
+            }
+        }
+        public static List<DocsDetailDto> ListAllDetailDocs()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.DocumentDetails.ToList()
+                    .Select(u => new DocsDetailDto
+                    {
+                        ID = u.ID,
+                        Produit = u.Produit.Designation,
+                        Quantity = u.Quantity,
+                        UnitPrice = u.UnitPrice,
+                        Label = u.Label
+                    })
+                    .ToList();
+            }
+        }
+        public static void AddDocDetail(DocumentDetail documentDetail)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                db.DocumentDetails.Add(documentDetail);
+                db.SaveChanges();
+            }
+        }
+        internal static DocumentDetail GetDetailDocById(int id)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.DocumentDetails.FirstOrDefault(u => u.ID == id);
+            }
+
+        }
+        public static void EditDetailDoc(DocumentDetail documentDetail)
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                var newDetailDocInfos = db.DocumentDetails.FirstOrDefault(use => use.ID == documentDetail.ID);
+                if (newDetailDocInfos != null)
+                {
+                    newDetailDocInfos.Produit = documentDetail.Produit;
+                    newDetailDocInfos.Quantity = documentDetail.Quantity;
+                    newDetailDocInfos.Label = documentDetail.Label;
+                                       
+
+                    db.SaveChanges();
+                }
+            }
+        }
+        public static bool DeleteDetailDoc(int id)
+        {
+
+            using (var db = new GLprojectDBcontext())
+            {
+                var detailDoc = db.DocumentDetails.FirstOrDefault(c => c.ID == id);
+                if (detailDoc == null)
+                {
+                    return false;
+                }
+
+                db.DocumentDetails.Remove(detailDoc);
+                db.SaveChanges();
+                return true;
+            }
         }
         #endregion
     }

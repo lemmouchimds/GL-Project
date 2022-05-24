@@ -65,16 +65,6 @@ namespace GLMainProject.AgentDeVente
                 return;
             }
 
-            //var result = new Customer
-            //{
-            //    Designation = tbDesignation.Text,
-            //    Adress = tbAdress.Text,
-            //    Email = tbEmail.Text,
-            //    Responsable = tbResponsable.Text,
-            //    IsRevendeur = cbRevenduer.Checked
-            //};
-
-            //Controller.AddClient(result);
         }
     }
 }

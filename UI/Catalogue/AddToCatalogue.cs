@@ -17,7 +17,7 @@ namespace GLMainProject.AgentDeVente
             InitializeComponent();
         }
 
-        public Product Product { get; set; }
+        public Product CurrentProduct { get; set; }
 
         private void AddToCatalogue_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -43,22 +43,20 @@ namespace GLMainProject.AgentDeVente
 
         private void bnAdd_Click(object sender, EventArgs e)
         {
+            ValidateChildren();
+            
+        }
 
-            using(var bd = new GLprojectDBcontext())
-            {
-                var result = new Product
-                {
-                    Referance = tbRef.Text,
-                    Designation = tbDes.Text,
-                    ValNutritionnelle = double.Parse(tbValNut.Text),
-                    PoidsNet = double.Parse(tbPoids.Text),
-                    CoutRevient = decimal.Parse(tbCoutRevient.Text),
-                    GainSouaite = decimal.Parse(tbGainSouaite.Text)
-                };
+        private void AddCatalogue_Load(object sender, EventArgs e)
+        {
+            //tbDesignation.DataBindings.Add("Text", CurrentCust, "Designation");
+            tbDes.DataBindings.Add("Text", CurrentProduct, "Designation");
+            tbRef.DataBindings.Add("Text", CurrentProduct, "Referance");
+            tbValNut.DataBindings.Add("Text", CurrentProduct, "ValNutritionnelle");
+            tbPoids.DataBindings.Add("Text", CurrentProduct, "PoidsNet");
+            tbCoutRevient.DataBindings.Add("Text", CurrentProduct, "CoutRevient");
+            tbGainSouaite.DataBindings.Add("Text", CurrentProduct, "GainSouaite");
 
-                bd.Products.Add(result);
-                bd.SaveChanges();
-            }
         }
     }
 }

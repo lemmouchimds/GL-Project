@@ -57,6 +57,7 @@
             this.bnDelete.TabIndex = 26;
             this.bnDelete.Text = "Supprimer";
             this.bnDelete.UseVisualStyleBackColor = true;
+            this.bnDelete.Click += new System.EventHandler(this.bnDelete_Click);
             // 
             // bnEdit
             // 
@@ -67,6 +68,7 @@
             this.bnEdit.TabIndex = 27;
             this.bnEdit.Text = "Modifier";
             this.bnEdit.UseVisualStyleBackColor = true;
+            this.bnEdit.Click += new System.EventHandler(this.bnEdit_Click);
             // 
             // bnAdd
             // 
@@ -77,6 +79,7 @@
             this.bnAdd.TabIndex = 28;
             this.bnAdd.Text = "Ajouter";
             this.bnAdd.UseVisualStyleBackColor = true;
+            this.bnAdd.Click += new System.EventHandler(this.bnAdd_Click);
             // 
             // StockUI
             // 
