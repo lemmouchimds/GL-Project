@@ -279,6 +279,7 @@
             this.Name = "AddDoc";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Document";
             this.Load += new System.EventHandler(this.AddDoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailDoc)).EndInit();

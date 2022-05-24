@@ -16,7 +16,7 @@ namespace GLMainProject
         [STAThread]
         static void Main()
         {
-            var culture = CultureInfo.GetCultureInfo("fr-FR");
+            var culture = CultureInfo.GetCultureInfo("fr");
 
             CultureInfo.DefaultThreadCurrentCulture = culture;
 

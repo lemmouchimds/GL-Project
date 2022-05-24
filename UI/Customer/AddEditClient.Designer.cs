@@ -175,6 +175,7 @@
             this.MaximumSize = new System.Drawing.Size(762, 445);
             this.MinimumSize = new System.Drawing.Size(465, 445);
             this.Name = "AddEditClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Client";
             this.Load += new System.EventHandler(this.AddEditClient_Load);
             this.Validating += new System.ComponentModel.CancelEventHandler(this.AddEditClient_Validating);

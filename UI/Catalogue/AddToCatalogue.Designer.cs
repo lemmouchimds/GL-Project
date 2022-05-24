@@ -210,6 +210,7 @@
             this.MinimumSize = new System.Drawing.Size(454, 536);
             this.Name = "AddCatalogue";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Catalogue";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddToCatalogue_FormClosing);
             this.Load += new System.EventHandler(this.AddCatalogue_Load);

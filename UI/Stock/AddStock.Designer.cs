@@ -153,6 +153,7 @@
             this.Name = "AddStock";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Stock";
             this.Load += new System.EventHandler(this.AddStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).EndInit();
