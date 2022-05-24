@@ -17,5 +17,9 @@ namespace GLMainProject.UI
             InitializeComponent();
         }
 
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Controller.ListAllInventories();
+        }
     }
 }

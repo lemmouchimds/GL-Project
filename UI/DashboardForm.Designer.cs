@@ -71,6 +71,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Tableau de bord";
+            this.Load += new System.EventHandler(this.DashboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

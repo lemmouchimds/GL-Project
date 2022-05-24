@@ -42,66 +42,61 @@
             // lblProduct
             // 
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(18, 21);
-            this.lblProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProduct.Location = new System.Drawing.Point(27, 32);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(40, 13);
+            this.lblProduct.Size = new System.Drawing.Size(59, 20);
             this.lblProduct.TabIndex = 0;
             this.lblProduct.Text = "Produit";
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(18, 51);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuantity.Location = new System.Drawing.Point(27, 78);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(49, 13);
+            this.lblQuantity.Size = new System.Drawing.Size(73, 20);
             this.lblQuantity.TabIndex = 1;
             this.lblQuantity.Text = "Quantitie";
             // 
             // lblLabel
             // 
             this.lblLabel.AutoSize = true;
-            this.lblLabel.Location = new System.Drawing.Point(18, 82);
-            this.lblLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLabel.Location = new System.Drawing.Point(27, 126);
             this.lblLabel.Name = "lblLabel";
-            this.lblLabel.Size = new System.Drawing.Size(33, 13);
+            this.lblLabel.Size = new System.Drawing.Size(59, 20);
             this.lblLabel.TabIndex = 2;
-            this.lblLabel.Text = "Label";
+            this.lblLabel.Text = "Libeller";
             // 
             // cbProduct
             // 
             this.cbProduct.FormattingEnabled = true;
-            this.cbProduct.Location = new System.Drawing.Point(108, 21);
-            this.cbProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbProduct.Location = new System.Drawing.Point(162, 32);
             this.cbProduct.Name = "cbProduct";
-            this.cbProduct.Size = new System.Drawing.Size(208, 21);
+            this.cbProduct.Size = new System.Drawing.Size(310, 28);
             this.cbProduct.TabIndex = 3;
             this.cbProduct.SelectedValueChanged += new System.EventHandler(this.cbProduct_SelectedValueChanged);
             // 
             // nupQuantity
             // 
-            this.nupQuantity.Location = new System.Drawing.Point(108, 51);
-            this.nupQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nupQuantity.Location = new System.Drawing.Point(162, 78);
             this.nupQuantity.Name = "nupQuantity";
-            this.nupQuantity.Size = new System.Drawing.Size(207, 20);
+            this.nupQuantity.Size = new System.Drawing.Size(310, 26);
             this.nupQuantity.TabIndex = 4;
             // 
             // tbLabel
             // 
-            this.tbLabel.Location = new System.Drawing.Point(108, 78);
-            this.tbLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLabel.Location = new System.Drawing.Point(162, 120);
             this.tbLabel.Name = "tbLabel";
-            this.tbLabel.Size = new System.Drawing.Size(208, 20);
+            this.tbLabel.Size = new System.Drawing.Size(310, 26);
             this.tbLabel.TabIndex = 5;
             // 
             // bnCancel
             // 
             this.bnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bnCancel.Location = new System.Drawing.Point(239, 118);
+            this.bnCancel.Location = new System.Drawing.Point(358, 182);
+            this.bnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bnCancel.Name = "bnCancel";
-            this.bnCancel.Size = new System.Drawing.Size(75, 23);
+            this.bnCancel.Size = new System.Drawing.Size(112, 35);
             this.bnCancel.TabIndex = 25;
             this.bnCancel.Text = "Annuler";
             this.bnCancel.UseVisualStyleBackColor = true;
@@ -110,9 +105,10 @@
             // 
             this.bnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bnOK.Location = new System.Drawing.Point(159, 118);
+            this.bnOK.Location = new System.Drawing.Point(238, 182);
+            this.bnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bnOK.Name = "bnOK";
-            this.bnOK.Size = new System.Drawing.Size(75, 23);
+            this.bnOK.Size = new System.Drawing.Size(112, 35);
             this.bnOK.TabIndex = 26;
             this.bnOK.Text = "OK";
             this.bnOK.UseVisualStyleBackColor = true;
@@ -120,10 +116,10 @@
             // AddDetailDoc
             // 
             this.AcceptButton = this.bnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bnCancel;
-            this.ClientSize = new System.Drawing.Size(327, 161);
+            this.ClientSize = new System.Drawing.Size(482, 222);
             this.Controls.Add(this.bnCancel);
             this.Controls.Add(this.bnOK);
             this.Controls.Add(this.tbLabel);
@@ -132,16 +128,16 @@
             this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblProduct);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(343, 200);
+            this.MaximumSize = new System.Drawing.Size(504, 278);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(343, 200);
+            this.MinimumSize = new System.Drawing.Size(504, 278);
             this.Name = "AddDetailDoc";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Detail Document";
             this.Load += new System.EventHandler(this.AddDetailDoc_Load);
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.AddDetailDoc_Validating);
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

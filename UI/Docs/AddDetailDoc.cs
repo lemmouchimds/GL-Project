@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GLMainProject.UI.Docs
@@ -33,6 +26,15 @@ namespace GLMainProject.UI.Docs
         private void cbProduct_SelectedValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddDetailDoc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(nupQuantity.Value > Controller.GetStockById(int.Parse(cbProduct.ValueMember)).InStock)
+            {
+                MessageBox.Show("Vous n'avez pas la quantitie suffisante pour cette operation !");
+                e.Cancel = true; 
+            }
         }
     }
 }
