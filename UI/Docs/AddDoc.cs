@@ -17,9 +17,13 @@ namespace GLMainProject.UI.Docs
             tbRef.DataBindings.Add("text", CurrentDoc, "Reference");
             dtDate.DataBindings.Add("value", CurrentDoc, "Date");
             dtPayment.DataBindings.Add("value", CurrentDoc, "PaymentDate");
-            
 
-            cbCust.Items.AddRange(Controller.GetCustomerNames().ToArray());
+            cbCust.DataSource = Controller.ListAllCusts();
+            cbCust.ValueMember = "ID";
+            cbCust.DisplayMember = "Designation";
+            cbCust.DataBindings.Add("SelectedValue", CurrentDoc, nameof(CurrentDoc.CustomerID));
+
+            //cbCust.Items.AddRange(Controller.GetCustomerNames().ToArray());
             refreshGrid();
         }
 
@@ -37,7 +41,7 @@ namespace GLMainProject.UI.Docs
             {
                 if (newCust.ShowDialog() == DialogResult.OK)
                 {
-                    Controller.AddDocDetail(newCust.CurrentDocDetail);
+                    CurrentDoc.DocumentDetails.Add(newCust.CurrentDocDetail);
                     refreshGrid();
                 }
             }
@@ -45,29 +49,25 @@ namespace GLMainProject.UI.Docs
 
         private void refreshGrid()
         {
-            dataGridViewDetailDoc.DataSource = Controller.ListAllDetailDocs(CurrentDoc.ID);
+            dataGridViewDetailDoc.DataSource = CurrentDoc.DocumentDetails;
         }
 
         private void bnEdit_Click(object sender, EventArgs e)
         {
             if (dataGridViewDetailDoc.SelectedRows.Count <= 0)
                 return;
-            var currentDetailDoc = dataGridViewDetailDoc.SelectedRows[0].DataBoundItem as Dto.DocsDetailDto;
+            var currentDetailDoc = dataGridViewDetailDoc.SelectedRows[0].DataBoundItem as DocumentDetail;
             if (currentDetailDoc == null)
                 return;
 
-            var detailDoc = Controller.GetDetailDocById(currentDetailDoc.ID);
-            if (detailDoc == null)
-                return;
 
             using (var newDetailDoc = new AddDetailDoc()
             {
-                CurrentDocDetail = detailDoc
+                CurrentDocDetail = currentDetailDoc
             })
             {
                 if (newDetailDoc.ShowDialog() == DialogResult.OK)
                 {
-                    Controller.EditDetailDoc(newDetailDoc.CurrentDocDetail);
                     refreshGrid();
                 }
             }
@@ -77,15 +77,16 @@ namespace GLMainProject.UI.Docs
         {
             if (!IsOneSelected())
                 return;
-            var currentCust = dataGridViewDetailDoc.SelectedRows[0].DataBoundItem as Dto.DocsDetailDto;
+            var currentCust = dataGridViewDetailDoc.SelectedRows[0].DataBoundItem as DocumentDetail;
             if (currentCust == null)
                 return;
 
             var dialogResult = MessageBox.Show($"Voulez-vous vraiment supprimer le document '{currentCust.Label}'?", "Attention!"
                 , MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            if (dialogResult == DialogResult.Yes && Controller.DeleteDetailDoc(currentCust.ID))
+            if (dialogResult == DialogResult.Yes)
             {
+                CurrentDoc.DocumentDetails.Remove(currentCust);
                 refreshGrid();
             }
         }

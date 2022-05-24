@@ -13,7 +13,7 @@ namespace GLMainProject.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202205172010205_init"; }
+            get { return "202205242105502_init"; }
         }
         
         string IMigrationMetadata.Source

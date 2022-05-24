@@ -31,7 +31,12 @@ namespace GLMainProject.UI.Stock
             dtDatePeremption.DataBindings.Add("value", CurrentInventory, "DatePeremption");
             nupQuantity.DataBindings.Add("value", CurrentInventory, "InStock");
 
-            cbProduct.Items.AddRange(Controller.ProductNamesID().ToArray());
+            cbProduct.DataSource = Controller.ListAllProducts();
+            cbProduct.DisplayMember = "Designation";
+            cbProduct.ValueMember = "ID";
+            cbProduct.DataBindings.Add("SelectedValue", CurrentInventory, nameof(CurrentInventory.ProductID));
+
+            //cbProduct.Items.AddRange(Controller.ProductNamesID().ToArray());
         }
     }
 }

@@ -41,19 +41,19 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
+                        ProduitID = c.Int(nullable: false),
                         Quantity = c.Int(nullable: false),
                         UnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Label = c.String(maxLength: 256, storeType: "nvarchar"),
                         Offset = c.Int(nullable: false),
                         Marging = c.Decimal(nullable: false, precision: 18, scale: 2),
                         DocumentID = c.Int(nullable: false),
-                        Produit_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Documents", t => t.DocumentID, cascadeDelete: true)
-                .ForeignKey("dbo.Products", t => t.Produit_ID)
-                .Index(t => t.DocumentID)
-                .Index(t => t.Produit_ID);
+                .ForeignKey("dbo.Products", t => t.ProduitID, cascadeDelete: true)
+                .Index(t => t.ProduitID)
+                .Index(t => t.DocumentID);
             
             CreateTable(
                 "dbo.Products",
@@ -66,6 +66,7 @@
                         PoidsNet = c.Double(nullable: false),
                         CoutRevient = c.Decimal(nullable: false, precision: 18, scale: 2),
                         GainSouaite = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        TotalQuantity = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Discriminator = c.String(nullable: false, maxLength: 128, storeType: "nvarchar"),
                         ProduitDerivee_ID = c.Int(),
                     })
@@ -102,15 +103,15 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.DocumentDetails", "Produit_ID", "dbo.Products");
             DropForeignKey("dbo.Products", "ProduitDerivee_ID", "dbo.Products");
             DropForeignKey("dbo.Inventories", "ProductID", "dbo.Products");
+            DropForeignKey("dbo.DocumentDetails", "ProduitID", "dbo.Products");
             DropForeignKey("dbo.DocumentDetails", "DocumentID", "dbo.Documents");
             DropForeignKey("dbo.Documents", "CustomerID", "dbo.Customers");
             DropIndex("dbo.Inventories", new[] { "ProductID" });
             DropIndex("dbo.Products", new[] { "ProduitDerivee_ID" });
-            DropIndex("dbo.DocumentDetails", new[] { "Produit_ID" });
             DropIndex("dbo.DocumentDetails", new[] { "DocumentID" });
+            DropIndex("dbo.DocumentDetails", new[] { "ProduitID" });
             DropIndex("dbo.Documents", new[] { "CustomerID" });
             DropTable("dbo.Users");
             DropTable("dbo.Inventories");

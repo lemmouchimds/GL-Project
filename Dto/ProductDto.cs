@@ -15,7 +15,7 @@ namespace GLMainProject.Dto
         public double PoidsNet { get; set; }
         public decimal CoutRevient { get; set; }
         public decimal GainSouaite { get; set; }
-
+        public decimal TotalQuantity { get; set; }
 
 
     }

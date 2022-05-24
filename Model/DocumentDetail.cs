@@ -11,7 +11,8 @@ namespace GLMainProject
 
         [Key]
         public int ID { get; set; }
-        public Product Produit { get; set; }
+        public virtual int ProduitID { get; set; }
+        public virtual Product Produit { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         [StringLength(Consts.MaxStringLength)]

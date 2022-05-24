@@ -125,9 +125,9 @@
     <Compile Include="Main\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205172010205_init.cs" />
-    <Compile Include="Migrations\202205172010205_init.designer.cs">
-      <DependentUpon>202205172010205_init.cs</DependentUpon>
+    <Compile Include="Migrations\202205242105502_init.cs" />
+    <Compile Include="Migrations\202205242105502_init.designer.cs">
+      <DependentUpon>202205242105502_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UI\Customer\AddEditClient.cs">
@@ -235,8 +235,8 @@
     <EmbeddedResource Include="Main\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205172010205_init.resx">
-      <DependentUpon>202205172010205_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205242105502_init.resx">
+      <DependentUpon>202205242105502_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Customer\AddEditClient.resx">
       <DependentUpon>AddEditClient.cs</DependentUpon>

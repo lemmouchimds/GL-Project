@@ -22,8 +22,17 @@ namespace GLMainProject.UI.Docs
         {
             tbLabel.DataBindings.Add("Text", CurrentDocDetail, "Label");
             nupQuantity.DataBindings.Add("Text", CurrentDocDetail, "Quantity");
+            cbProduct.DataSource = Controller.ListDispoProducts();
+            cbProduct.DisplayMember = "Designation";
+            cbProduct.ValueMember = "ID";
+            cbProduct.DataBindings.Add("SelectedValue", CurrentDocDetail, nameof(DocumentDetail.ProduitID));
 
-            cbProduct.Items.AddRange(Controller.InventoryNameID().ToArray());
+            //cbProduct.Items.AddRange(Controller.InventoryNameID().ToArray());
+        }
+
+        private void cbProduct_SelectedValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

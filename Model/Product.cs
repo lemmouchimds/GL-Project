@@ -25,13 +25,15 @@ namespace GLMainProject
         public double PoidsNet { get; set; }
         public decimal CoutRevient { get; set; }
         public decimal GainSouaite { get; set; }
+
+        public decimal TotalQuantity { get; set; }
         public virtual ICollection<Inventory> Inventories { get; set; }
+        public virtual ICollection<DocumentDetail> DocumentDetails { get; set; }
         public decimal PrixFinal
         {
             get { return CoutRevient + GainSouaite; }
 //            set { PrixFinal = value; }
         }
-
     }
 
     public class ProduitDerivee : Product

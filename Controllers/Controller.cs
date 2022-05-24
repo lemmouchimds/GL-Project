@@ -1,4 +1,5 @@
 ﻿using GLMainProject.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -36,6 +37,8 @@ namespace GLMainProject
                     .ToList();
             }
         }
+
+     
 
         public static void AddClient(Customer client)
         {
@@ -175,7 +178,27 @@ namespace GLMainProject
                         ValNutritionnelle = u.ValNutritionnelle,
                         PoidsNet = u.PoidsNet,
                         CoutRevient = u.CoutRevient,
-                        GainSouaite = u.GainSouaite
+                        GainSouaite = u.GainSouaite,
+                        TotalQuantity = u.TotalQuantity
+                    })
+                    .ToList();
+            }
+        }
+        public static List<ProductDto> ListDispoProducts()
+        {
+            using (var db = new GLprojectDBcontext())
+            {
+                return db.Products.Where(p=> p.TotalQuantity > 0).ToList()
+                    .Select(u => new ProductDto
+                    {
+                        ID = u.ID,
+                        Referance = u.Referance,
+                        Designation = u.Designation,
+                        ValNutritionnelle = u.ValNutritionnelle,
+                        PoidsNet = u.PoidsNet,
+                        CoutRevient = u.CoutRevient,
+                        GainSouaite = u.GainSouaite,
+                        TotalQuantity = u.TotalQuantity
                     })
                     .ToList();
             }
@@ -308,6 +331,10 @@ namespace GLMainProject
             using (var db = new GLprojectDBcontext())
             {
                 db.Documents.Add(document);
+                foreach (var item in document.DocumentDetails)
+                {
+                    db.DocumentDetails.Add(item);
+                }
                 db.SaveChanges();
             }
         }
@@ -325,7 +352,11 @@ namespace GLMainProject
                     newDocumentInfos.Customer = document.Customer;
                     newDocumentInfos.Date = document.Date;
                     newDocumentInfos.Payed = document.Payed;
-
+                    db.DocumentDetails.RemoveRange(newDocumentInfos.DocumentDetails);
+                    foreach (var item in document.DocumentDetails)
+                    {
+                        db.DocumentDetails.Add(item);
+                    }
                     db.SaveChanges();
                     return true;
                 }
@@ -499,6 +530,8 @@ namespace GLMainProject
             using (var db = new GLprojectDBcontext())
             {
                 db.Inventory.Add(inventory);
+                inventory.Product = db.Products.FirstOrDefault(c => c.ID == inventory.ProductID);
+                inventory.Product.TotalQuantity += inventory.InStock;
                 db.SaveChanges();
             }
         }
@@ -517,11 +550,11 @@ namespace GLMainProject
                 var newInventoryInfos = db.Inventory.FirstOrDefault(use => use.ID == inventory.ID);
                 if (newInventoryInfos != null)
                 {
+                    inventory.Product.TotalQuantity += (newInventoryInfos.InStock - inventory.InStock);
                     newInventoryInfos.Product = inventory.Product;
                     newInventoryInfos.DateProduction = inventory.DateProduction;
                     newInventoryInfos.DatePeremption = inventory.DatePeremption;
                     newInventoryInfos.InStock = inventory.InStock;
-
                     db.SaveChanges();
                 }
             }
@@ -536,7 +569,7 @@ namespace GLMainProject
                 {
                     return false;
                 }
-
+                inventory.Product.TotalQuantity -= inventory.InStock;
                 db.Inventory.Remove(inventory);
                 db.SaveChanges();
                 return true;
